@@ -1,0 +1,16 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+@layer base {
+  body {
+    background: #f3ede0;
+  }
+  svg {
+    width: 100%;
+  }
+  a {
+    display: inline-block;
+  }
+}
