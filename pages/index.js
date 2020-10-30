@@ -1,6 +1,5 @@
 import Container from "../components/container";
-import MoreStories from "../components/more-stories";
-import HeroPost from "../components/hero-post";
+import Featured from "../components/featured";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
 import { getAllPostsForHome, getHomeData } from "../lib/api";
@@ -17,7 +16,7 @@ export default function Index({ allPosts, homeData, preview }) {
         </Head>
         <Container>
           <Intro text={homeData[0].text} image={homeData[0].illo} />
-          {posts.length > 0 && <MoreStories posts={posts} />}
+          {posts.length > 0 && <Featured posts={posts} />}
         </Container>
       </Layout>
     </>

@@ -1,5 +1,3 @@
-import Avatar from "../components/avatar";
-import Date from "../components/date";
 import CoverImage from "./cover-image";
 import Link from "next/link";
 

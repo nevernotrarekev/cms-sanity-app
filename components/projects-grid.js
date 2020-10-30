@@ -1,8 +1,8 @@
 import react, { useState } from "react";
-import PostPreview from "../components/post-preview";
+import PostPreview from "./post-preview";
 import classNames from "classnames";
 
-export default function MoreStories({ posts }) {
+export default function ProjectsGrid({ posts }) {
   const [projects, setProjects] = useState(posts);
   const filters = [
     { name: "All", slug: "all" },
@@ -14,12 +14,6 @@ export default function MoreStories({ posts }) {
     if (filter === "all") {
       setProjects(posts);
     } else {
-      // const projectNodes =
-      //   data &&
-      //   data.projects &&
-      //   mapEdgesToNodes(data.projects)
-      //     .filter(filterOutDocsWithoutSlugs)
-      //     .filter((project) => project.type === filter);
       setProjects(posts.filter((post) => post.type === filter));
     }
   };

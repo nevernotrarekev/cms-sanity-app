@@ -1,7 +1,5 @@
 import Container from "../components/container";
-import MoreStories from "../components/more-stories";
-import HeroPost from "../components/hero-post";
-import Intro from "../components/intro";
+import ProjectsGrid from "../components/projects-grid";
 import Layout from "../components/layout";
 import { getAllPostsForHome } from "../lib/api";
 import Head from "next/head";
@@ -16,7 +14,7 @@ export default function Index({ allPosts, preview }) {
           <title>Next.js Blog Example with {CMS_NAME}</title>
         </Head>
         <Container>
-          {posts.length > 0 && <MoreStories posts={posts} />}
+          {posts.length > 0 && <ProjectsGrid posts={posts} />}
         </Container>
       </Layout>
     </>
