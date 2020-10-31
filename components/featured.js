@@ -15,6 +15,7 @@ export default function Featured({ posts }) {
           return (
             <div key={post.slug} className={columns}>
               <PostPreview
+                index={index}
                 title={post.title}
                 brand={post.brand}
                 coverImage={post.coverImage}

@@ -13,9 +13,9 @@ export default createSchema({
   types: schemaTypes.concat([
     /* Your types here! */
     {
-      name: "home",
+      name: "page",
       type: "document",
-      title: "Home",
+      title: "Page",
       fields: [
         {
           name: "text",
@@ -26,6 +26,31 @@ export default createSchema({
           name: "illo",
           title: "Illo",
           type: "image",
+          options: {
+            hotspot: true, // <-- Defaults to false,
+            metadata: ["exif", "location", "lqip", "palette"],
+          },
+          fields: [
+            {
+              name: "caption",
+              type: "string",
+              title: "Caption",
+              options: {
+                isHighlighted: true, // <-- make this field easily accessible
+              },
+            },
+            {
+              // Editing this field will be hidden behind an "Edit"-button
+              name: "attribution",
+              type: "string",
+              title: "Attribution",
+            },
+          ],
+        },
+        {
+          name: "slug",
+          title: "Slug",
+          type: "slug",
         },
       ],
     },
@@ -99,6 +124,9 @@ export default createSchema({
           name: "coverImage",
           title: "Cover Image",
           type: "image",
+          options: {
+            hotspot: true,
+          },
         },
         {
           name: "date",
@@ -115,6 +143,24 @@ export default createSchema({
           name: "slug",
           title: "Slug",
           type: "slug",
+        },
+      ],
+    },
+    ,
+    {
+      name: "playitem",
+      type: "document",
+      title: "Play Item",
+      fields: [
+        {
+          name: "vimeoid",
+          title: "Vimeo Id",
+          type: "string",
+        },
+        {
+          name: "playImage",
+          title: "Play Image",
+          type: "image",
         },
       ],
     },

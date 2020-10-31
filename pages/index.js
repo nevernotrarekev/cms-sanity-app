@@ -2,11 +2,12 @@ import Container from "../components/container";
 import Featured from "../components/featured";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
-import { getAllPostsForHome, getHomeData } from "../lib/api";
+import { getAllPostsForHome, getPageData } from "../lib/api";
 import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 
 export default function Index({ allPosts, homeData, preview }) {
+  console.log(homeData);
   const posts = allPosts;
   return (
     <>
@@ -15,7 +16,7 @@ export default function Index({ allPosts, homeData, preview }) {
           <title>Next.js Blog Example with {CMS_NAME}</title>
         </Head>
         <Container>
-          <Intro text={homeData[0].text} image={homeData[0].illo} />
+          <Intro text={homeData.text} image={homeData.illo} />
           {posts.length > 0 && <Featured posts={posts} />}
         </Container>
       </Layout>
@@ -25,8 +26,12 @@ export default function Index({ allPosts, homeData, preview }) {
 
 export async function getStaticProps({ preview = false }) {
   const allPosts = await getAllPostsForHome(preview);
-  const homeData = await getHomeData(preview);
+  const homeData = await getPageData("/");
   return {
-    props: { allPosts, homeData, preview },
+    props: {
+      allPosts,
+      homeData,
+      preview,
+    },
   };
 }

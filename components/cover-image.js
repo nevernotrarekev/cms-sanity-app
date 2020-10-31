@@ -2,13 +2,14 @@ import cn from "classnames";
 import Link from "next/link";
 import { imageBuilder } from "../lib/sanity";
 
-export default function CoverImage({ title, url }) {
-  const image = (
+export default function CoverImage({ index, title, image }) {
+  console.log(image);
+  const builtImage = (
     <img
       alt={`Cover Image for ${title}`}
-      src={imageBuilder.image(url).height(1000).width(2000).url()}
+      src={imageBuilder.image(image).width(1200).height(400).url()}
     />
   );
 
-  return <div className="">{image}</div>;
+  return <div className="">{builtImage}</div>;
 }

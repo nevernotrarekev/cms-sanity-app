@@ -5,7 +5,7 @@ export default function Intro({ text, image }) {
   const illo = (
     <img
       alt={`Intro section Illustration of two men fighting near a portal`}
-      src={imageBuilder.image(image).height(1000).width(2000).url()}
+      src={imageBuilder.image(image).height(402).width(324).url()}
     />
   );
   return (
