@@ -12,7 +12,6 @@ import { CMS_NAME } from "../../lib/constants";
 import Link from "next/link";
 
 export default function Post({ post, morePosts, preview }) {
-  console.log(morePosts);
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;

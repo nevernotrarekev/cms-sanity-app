@@ -55,6 +55,107 @@ export default createSchema({
       ],
     },
     {
+      name: "about",
+      type: "document",
+      title: "About",
+      fields: [
+        {
+          name: "pageTitle",
+          title: "Page Title",
+          type: "string",
+        },
+        {
+          name: "slug",
+          title: "Slug",
+          type: "slug",
+        },
+        {
+          name: "aboutSectionTitle",
+          title: "About Section Title",
+          type: "string",
+        },
+        {
+          name: "aboutContent",
+          title: "About Content",
+          type: "array",
+          of: [{ type: "block" }],
+        },
+        {
+          name: "aboutImage",
+          title: "About Image",
+          type: "image",
+          options: {
+            hotspot: true, // <-- Defaults to false,
+            metadata: ["exif", "location", "lqip", "palette"],
+          },
+          fields: [
+            {
+              // Editing this field will be hidden behind an "Edit"-button
+              name: "attribution",
+              type: "string",
+              title: "Attribution",
+            },
+          ],
+        },
+        {
+          name: "aboutImage2",
+          title: "About Image 2",
+          type: "image",
+          options: {
+            hotspot: true, // <-- Defaults to false,
+            metadata: ["exif", "location", "lqip", "palette"],
+          },
+          fields: [
+            {
+              // Editing this field will be hidden behind an "Edit"-button
+              name: "attribution",
+              type: "string",
+              title: "Attribution",
+            },
+          ],
+        },
+        {
+          name: "aboutImage3",
+          title: "About Image 3",
+          type: "image",
+          options: {
+            hotspot: true, // <-- Defaults to false,
+            metadata: ["exif", "location", "lqip", "palette"],
+          },
+          fields: [
+            {
+              // Editing this field will be hidden behind an "Edit"-button
+              name: "attribution",
+              type: "string",
+              title: "Attribution",
+            },
+          ],
+        },
+        {
+          name: "subsection1Title",
+          title: "Subsection 1 Title",
+          type: "string",
+        },
+        {
+          name: "subsection1Content",
+          title: "Subsection 1 Content",
+          type: "array",
+          of: [{ type: "block" }],
+        },
+        {
+          name: "subsection2Title",
+          title: "Subsection 2 Title",
+          type: "string",
+        },
+        {
+          name: "subsection2Content",
+          title: "Subsection 2 Content",
+          type: "array",
+          of: [{ type: "block" }],
+        },
+      ],
+    },
+    {
       name: "author",
       type: "document",
       title: "Author",

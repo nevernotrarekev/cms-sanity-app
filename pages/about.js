@@ -1,12 +1,16 @@
 import Container from "../components/container";
-// import MoreStories from "../components/more-stories";
 import Layout from "../components/layout";
-import { getAllPostsForHome } from "../lib/api";
+import { getAboutData } from "../lib/api";
 import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
+import markdownStyles from "../components/markdown-styles.module.css";
+import BlockContent from "@sanity/block-content-to-react";
+import ImageContainer from "../components/image-container";
+import { imageBuilder } from "../lib/sanity";
+import cn from "classnames";
 
-export default function Index({ allPosts, preview }) {
-  const morePosts = allPosts.slice(1);
+export default function Index({ aboutData, preview }) {
+  console.log(aboutData);
   return (
     <>
       <Layout preview={preview}>
@@ -14,8 +18,59 @@ export default function Index({ allPosts, preview }) {
           <title>Next.js Blog Example with {CMS_NAME}</title>
         </Head>
         <Container>
-          about page here
-          {/* {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
+          <h1>{aboutData.pageTitle}</h1>
+          <div className="grid grid-cols-10 gap-8">
+            <div className="col-span-10 md:col-span-5">
+              <h3 className>{aboutData.aboutSectionTitle}</h3>
+              <div className="mt-6">
+                <BlockContent
+                  blocks={aboutData.aboutContent}
+                  className={markdownStyles.markdown}
+                />
+              </div>
+            </div>
+            <div className="col-span-10 md:col-span-5 self-center">
+              <img
+                src={imageBuilder
+                  .image(aboutData.aboutImage)
+                  .width(612)
+                  .height(409)
+                  .url()}
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-10 gap-8 mt-5 md:mt-10">
+            <div className="col-span-5 md:col-span-3">
+              <img
+                src={imageBuilder
+                  .image(aboutData.aboutImage2)
+                  .width(338)
+                  .height(519)
+                  .url()}
+              />
+            </div>
+            <div className="col-span-5 md:col-span-3">
+              <img
+                src={imageBuilder
+                  .image(aboutData.aboutImage3)
+                  .width(338)
+                  .height(519)
+                  .url()}
+              />
+            </div>
+            <div className="col-span-10 md:col-span-4 self-center">
+              <h3>{aboutData.subsection1Title}</h3>
+              <BlockContent
+                blocks={aboutData.subsection1Content}
+                className={markdownStyles.markdown}
+              />
+              <h3>{aboutData.subsection2Title}</h3>
+              <BlockContent
+                blocks={aboutData.subsection2Content}
+                className={markdownStyles.markdown}
+              />
+            </div>
+          </div>
         </Container>
       </Layout>
     </>
@@ -23,8 +78,8 @@ export default function Index({ allPosts, preview }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const allPosts = await getAllPostsForHome(preview);
+  const aboutData = await getAboutData("/about");
   return {
-    props: { allPosts, preview },
+    props: { aboutData, preview },
   };
 }
