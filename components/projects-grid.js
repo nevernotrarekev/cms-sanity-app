@@ -1,6 +1,7 @@
 import react, { useState } from "react";
 import PostPreview from "./post-preview";
 import classNames from "classnames";
+import styles from "./projects-grid.module.css";
 
 export default function ProjectsGrid({ posts }) {
   const [projects, setProjects] = useState(posts);
@@ -19,25 +20,28 @@ export default function ProjectsGrid({ posts }) {
   };
   return (
     <section>
-      <ul className="flex flex-row">
-        {filters &&
-          filters.map((filter) => {
-            return (
-              <li className="mx-3" onClick={() => handleFilter(filter.slug)}>
-                {filter.name}
-              </li>
-            );
-          })}
-      </ul>
-      <div className="grid grid-cols-12 gap-5 auto-rows-max">
+      <div className="flex flex-col md:flex-row w-full  py-12">
+        <h1>Our Work</h1>
+        <header className="ml-auto w-full">
+          <ul className="flex flex-row justify-end">
+            {filters &&
+              filters.map((filter) => {
+                return (
+                  <li
+                    className="mx-3"
+                    onClick={() => handleFilter(filter.slug)}
+                  >
+                    {filter.name}
+                  </li>
+                );
+              })}
+          </ul>
+        </header>
+      </div>
+      <div className="flex flex-wrap">
         {projects.map((post, index) => {
-          var columns = classNames({
-            "col-span-12": index % 6 === 0,
-            "col-span-7": index === 1,
-            "col-span-5": index === 2,
-          });
           return (
-            <div key={post.slug} className={columns}>
+            <div key={post.slug} className={styles.columns}>
               <PostPreview
                 title={post.title}
                 brand={post.brand}

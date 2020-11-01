@@ -1,5 +1,12 @@
 module.exports = {
   theme: {
+    maxWidth: {
+      mid: "1240px",
+      wide: "1380px",
+    },
+    width: {
+      "168px": "168px",
+    },
     aspectRatio: {
       none: 0,
       square: [1, 1],
@@ -18,6 +25,7 @@ module.exports = {
         "accent-7": "#333",
         success: "#0070f3",
         cyan: "#79FFE1",
+        carnation: "#f25b5d",
       },
       spacing: {
         28: "7rem",

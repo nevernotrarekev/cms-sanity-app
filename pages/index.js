@@ -7,7 +7,7 @@ import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 
 export default function Index({ allPosts, homeData, preview }) {
-  console.log(homeData);
+  console.log(allPosts);
   const posts = allPosts;
   return (
     <>
