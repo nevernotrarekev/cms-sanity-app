@@ -5,9 +5,7 @@ import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 import markdownStyles from "../components/markdown-styles.module.css";
 import BlockContent from "@sanity/block-content-to-react";
-import ImageContainer from "../components/image-container";
 import { imageBuilder } from "../lib/sanity";
-import cn from "classnames";
 
 export default function Index({ aboutData, preview }) {
   console.log(aboutData);
