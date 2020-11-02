@@ -13,6 +13,23 @@ export default createSchema({
   types: schemaTypes.concat([
     /* Your types here! */
     {
+      name: "playitem",
+      type: "document",
+      title: "Play Item",
+      fields: [
+        {
+          name: "vimeoid",
+          title: "Vimeo Id",
+          type: "string",
+        },
+        {
+          name: "playImage",
+          title: "Play Image",
+          type: "image",
+        },
+      ],
+    },
+    {
       name: "page",
       type: "document",
       title: "Page",
@@ -44,6 +61,36 @@ export default createSchema({
               name: "attribution",
               type: "string",
               title: "Attribution",
+            },
+          ],
+        },
+        {
+          name: "slug",
+          title: "Slug",
+          type: "slug",
+        },
+      ],
+    },
+    {
+      name: "play",
+      type: "document",
+      title: "Play",
+      fields: [
+        {
+          name: "pageTitle",
+          title: "Page Title",
+          type: "string",
+        },
+        {
+          name: "items",
+          title: "Items",
+          type: "array",
+          of: [
+            {
+              name: "item",
+              title: "Item",
+              type: "reference",
+              to: [{ type: "playitem" }],
             },
           ],
         },
@@ -244,24 +291,6 @@ export default createSchema({
           name: "slug",
           title: "Slug",
           type: "slug",
-        },
-      ],
-    },
-    ,
-    {
-      name: "playitem",
-      type: "document",
-      title: "Play Item",
-      fields: [
-        {
-          name: "vimeoid",
-          title: "Vimeo Id",
-          type: "string",
-        },
-        {
-          name: "playImage",
-          title: "Play Image",
-          type: "image",
         },
       ],
     },

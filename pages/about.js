@@ -8,7 +8,6 @@ import BlockContent from "@sanity/block-content-to-react";
 import { imageBuilder } from "../lib/sanity";
 
 export default function Index({ aboutData, preview }) {
-  console.log(aboutData);
   return (
     <>
       <Layout preview={preview}>
