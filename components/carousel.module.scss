@@ -2,4 +2,19 @@
   margin: 17px;
   width: 50vw !important;
   height: 100%;
+  &.slick-slide,
+  &.slick-slide[aria-hidden="true"]:not(.slick-cloned)
+    ~ .slick-cloned[aria-hidden="true"] {
+    div {
+      opacity: 1;
+    }
+  }
+  /* slide when active/center */
+  &.slick-center,
+  &.slick-slide[aria-hidden="true"]:not([tabindex="-1"])
+    + .slick-cloned[aria-hidden="true"] {
+    div {
+      opacity: 1;
+    }
+  }
 }

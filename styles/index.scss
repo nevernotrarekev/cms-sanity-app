@@ -25,3 +25,17 @@
 .btn-blue {
   @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
 }
+
+.slick-dots li {
+  width: auto;
+}
+
+.slick-dots li.slick-active {
+  text-decoration: underline;
+}
+
+.slick-track,
+.slick-list {
+  -webkit-perspective: 2000;
+  -webkit-backface-visibility: hidden;
+}

@@ -1,4 +1,5 @@
 import react, { useState } from "react";
+import Link from "next/link";
 import PostPreview from "./post-preview";
 import styles from "./featured.module.css";
 
@@ -19,6 +20,11 @@ export default function Featured({ posts }) {
             </div>
           );
         })}
+      </div>
+      <div className="pt-10 pb-12 text-center">
+        <Link href="/work">
+          <a className="underline">View All</a>
+        </Link>
       </div>
     </section>
   );

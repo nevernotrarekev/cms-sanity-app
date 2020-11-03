@@ -16,21 +16,29 @@ const Carousel = ({ items }) => {
     arrows: false,
     drag: true,
     variableWidth: true,
+    onInit() {
+      console.log("here");
+    },
+    customPaging: function (i) {
+      return <a>{items[i].title}</a>;
+    },
   };
   return (
     <>
-      <Slider {...settings}>
-        {items.map((item, i) => {
-          return (
-            <div className={styles.container} key={i}>
-              <Vimeo
-                className="embed-responsive aspect-ratio-16/9"
-                video={item.vimeoid}
-              />
-            </div>
-          );
-        })}
-      </Slider>
+      <div className={styles.carousel}>
+        <Slider {...settings}>
+          {items.map((item, i) => {
+            return (
+              <div className={styles.container} key={i}>
+                <Vimeo
+                  className="embed-responsive aspect-ratio-16/9"
+                  video={item.vimeoid}
+                />
+              </div>
+            );
+          })}
+        </Slider>
+      </div>
     </>
   );
 };
