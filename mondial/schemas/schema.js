@@ -30,6 +30,23 @@ export default createSchema({
       ],
     },
     {
+      name: "featuredItem",
+      type: "document",
+      title: "Featured Item",
+      fields: [
+        {
+          name: "vimeoid",
+          title: "Vimeo Id",
+          type: "string",
+        },
+        {
+          name: "title",
+          title: "Title",
+          type: "string",
+        },
+      ],
+    },
+    {
       name: "page",
       type: "document",
       title: "Page",
