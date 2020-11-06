@@ -1,7 +1,7 @@
 import react, { useState } from "react";
 import Link from "next/link";
 import PostPreview from "./post-preview";
-import styles from "./featured.module.css";
+import styles from "./featured.module.scss";
 
 export default function Featured({ posts }) {
   return (
@@ -16,6 +16,7 @@ export default function Featured({ posts }) {
                 brand={post.brand}
                 coverImage={post.coverImage}
                 slug={post.slug}
+                featured
               />
             </div>
           );

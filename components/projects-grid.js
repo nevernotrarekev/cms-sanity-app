@@ -20,7 +20,7 @@ export default function ProjectsGrid({ posts }) {
   };
   return (
     <section>
-      <div className="flex flex-col md:flex-row w-full  py-12">
+      <div className="flex flex-col md:flex-row w-full py-12">
         <h1>Our Work</h1>
         <header className="ml-auto w-full">
           <ul className="flex flex-row justify-end">

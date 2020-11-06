@@ -1,0 +1,37 @@
+.gridItem {
+  img {
+    height: 330px;
+  }
+}
+
+.gridItem:nth-child(1) {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+}
+
+.gridItem:nth-child(2) {
+  grid-column: 1 / 8;
+  grid-row: 2 / 4;
+}
+
+.gridItem:nth-child(3) {
+  grid-column: 8 / 13;
+  grid-row: 2 / 4;
+  img {
+    height: 200%;
+  }
+}
+
+.gridItem:nth-child(4) {
+  grid-column: span 5;
+  div {
+    transform: translateY(-50%);
+  }
+  img {
+    height: 200%;
+  }
+}
+
+.gridItem:nth-child(5) {
+  grid-column: span 7;
+}
