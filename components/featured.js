@@ -6,7 +6,7 @@ import styles from "./featured.module.scss";
 export default function Featured({ posts }) {
   return (
     <section>
-      <div className="grid grid-cols-12 auto-rows-fr gap-5 auto-rows-max">
+      <div className="flex flex-wrap">
         {posts.map((post, index) => {
           return (
             <div key={post.slug} className={styles.gridItem}>
