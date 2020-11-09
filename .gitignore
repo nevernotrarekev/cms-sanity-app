@@ -13,6 +13,7 @@
 /out/
 
 /mondial/node_modules
+/mondial
 
 # production
 /build
