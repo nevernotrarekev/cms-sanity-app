@@ -27,6 +27,11 @@ export default createSchema({
           title: "Play Image",
           type: "image",
         },
+        {
+          name: "slug",
+          title: "Slug",
+          type: "slug",
+        },
       ],
     },
     {

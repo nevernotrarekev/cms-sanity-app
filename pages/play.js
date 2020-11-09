@@ -3,10 +3,10 @@ import Layout from "../components/layout";
 import { getAllPostsForPlay, getPlayData } from "../lib/api";
 import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
-import { imageBuilder } from "../lib/sanity";
-import Vimeo from "@u-wave/react-vimeo";
+import PlayGrid from "../components/play-grid";
 
 export default function Index({ allPlay, playData, preview }) {
+  console.log(playData);
   return (
     <>
       <Layout preview={preview}>
@@ -15,26 +15,7 @@ export default function Index({ allPlay, playData, preview }) {
         </Head>
         <Container>
           <h1>{playData.pageTitle}</h1>
-          <div className="grid grid-cols-12 gap-8">
-            {playData.items.length > 0 &&
-              playData.items.map((item, index) => {
-                return (
-                  <div className="col-span-4">
-                    {item.playImage && (
-                      <img src={imageBuilder.image(item.playImage).url()} />
-                    )}
-                    {item.vimeoid && (
-                      <div>
-                        <Vimeo
-                          className="embed-responsive aspect-ratio-16/9"
-                          video={item.vimeoid}
-                        />
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-          </div>
+          <PlayGrid items={playData.items} />
         </Container>
       </Layout>
     </>
