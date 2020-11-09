@@ -2,6 +2,8 @@ import react, { useState } from "react";
 import Link from "next/link";
 import PostPreview from "./post-preview";
 import styles from "./featured.module.scss";
+import IconArrow from "./icon-arrow";
+import cn from "classnames";
 
 export default function Featured({ posts }) {
   return (
@@ -22,9 +24,16 @@ export default function Featured({ posts }) {
           );
         })}
       </div>
-      <div className="pt-10 pb-12 text-center">
+      <div className="pb-12 text-center">
         <Link href="/work">
-          <a className="underline">View All</a>
+          <a className={styles.link}>
+            <div className={styles.linkInnerWrap}>
+              <div className={cn("text-carnation", styles.linkText)}>
+                View All
+              </div>
+              <IconArrow />
+            </div>
+          </a>
         </Link>
       </div>
     </section>

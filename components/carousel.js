@@ -1,9 +1,15 @@
 import Slider from "react-slick";
 import Vimeo from "@u-wave/react-vimeo";
 import styles from "./carousel.module.scss";
+import react, { useState } from "react";
+import cn from "classnames";
 
 const Carousel = ({ items }) => {
-  console.log(items);
+  const [showPoster, setShowPoster] = useState();
+  const videoClick = () => {
+    setShowPoster((showPoster) => !showPoster);
+    console.log("play the video or pause the video");
+  };
   const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -16,9 +22,6 @@ const Carousel = ({ items }) => {
     arrows: false,
     drag: true,
     variableWidth: true,
-    onInit() {
-      console.log("here");
-    },
     customPaging: function (i) {
       return <a>{items[i].title}</a>;
     },
@@ -29,10 +32,23 @@ const Carousel = ({ items }) => {
         <Slider {...settings}>
           {items.map((item, i) => {
             return (
-              <div className={styles.container} key={i}>
+              <div
+                onClick={() => videoClick()}
+                className={cn("bg-navy", styles.container)}
+                key={i}
+              >
+                <div className={cn("text-white", styles.videoOverlay)}>
+                  Watch Reel
+                </div>
                 <Vimeo
-                  className="embed-responsive aspect-ratio-16/9"
+                  className={cn(
+                    "embed-responsive aspect-ratio-16/9",
+                    styles.vimeo
+                  )}
                   video={item.vimeoid}
+                  autopause
+                  onPlay={() => videoClick()}
+                  onPause={() => videoClick()}
                 />
               </div>
             );

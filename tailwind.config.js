@@ -18,6 +18,7 @@ module.exports = {
     extend: {
       backgroundColor: {
         navy: "#141928",
+        navyAlt: "#1b2e5a",
       },
       colors: {
         "accent-1": "#FAFAFA",
@@ -45,6 +46,9 @@ module.exports = {
       boxShadow: {
         small: "0 5px 10px rgba(0, 0, 0, 0.12)",
         medium: "0 8px 30px rgba(0, 0, 0, 0.12)",
+      },
+      opacity: {
+        40: 0.4,
       },
     },
   },
