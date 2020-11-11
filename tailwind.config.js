@@ -1,4 +1,12 @@
 module.exports = {
+  purge: {
+    enabled: true,
+    layers: ["components", "utilities"],
+    content: [
+      "./components/*.js",
+      "./pages/*.js",
+    ],
+  },
   theme: {
     maxWidth: {
       mid: "1240px",
