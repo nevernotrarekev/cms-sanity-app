@@ -4,7 +4,6 @@ import styles from "./play-grid.module.scss";
 import cn from "classnames";
 
 const PlayGrid = ({ items }) => {
-  console.log(items);
   const classes = {
     playGridItem: `${styles.playGridItem}`,
   };

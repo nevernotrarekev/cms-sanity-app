@@ -1,22 +1,28 @@
 import Container from "./container";
-import { EXAMPLE_PATH } from "../lib/constants";
+import styles from "./footer.module.scss";
+import cn from "classnames";
+import FooterIllo from "./FooterIllo";
+import TinyLion from "./tiny-lion";
 
 export default function Footer() {
   return (
-    <footer className="text-white bg-navy">
+    <footer className="text-white bg-navy pb-12">
       <Container>
         <div className="grid grid-cols-12 pt-28">
           <div className="col-span-5">
             <div className="">
-              <h3 className="">Drop us a line:</h3>
-              <a className="" href="emailto:mondial@mondialcreative.com">
+              <h3 className={styles.emailTitle}>Drop us a line:</h3>
+              <a
+                className={cn("text-carnation", styles.email)}
+                href="emailto:mondial@mondialcreative.com"
+              >
                 mondial@mondialcreative.com
               </a>
             </div>
-            <div className="">
-              <div className="">Mondial Creative</div>
+            <div className="mt-10">
+              <h4 className="">Mondial Creative</h4>
 
-              <div className="flex flex-row justify-between">
+              <div className="flex flex-row justify-between mt-6">
                 <a
                   className=""
                   target="_blank"
@@ -36,28 +42,16 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="col-start-8 col-span-4">image here</div>
-          <div className="col-span-1">brothered with:</div>
-        </div>
-        {/* <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs/basic-features/pages"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Read Documentation
-            </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
+          <div className={cn("col-start-8 col-span-4", styles.footerIllo)}>
+            <FooterIllo />
           </div>
-        </div> */}
+          <div className={cn("col-span-1", styles.attribute)}>
+            <div>
+              brothered with:
+              <TinyLion />
+            </div>
+          </div>
+        </div>
       </Container>
     </footer>
   );

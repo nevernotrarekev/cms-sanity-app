@@ -14,8 +14,12 @@ export default function Index({ allPlay, playData, preview }) {
           <title>Next.js Blog Example with {CMS_NAME}</title>
         </Head>
         <Container>
-          <h1>{playData.pageTitle}</h1>
-          <PlayGrid items={playData.items} />
+          <div className="mb-100">
+            <h1>{playData.pageTitle}</h1>
+            <div className="mt-8">
+              <PlayGrid items={playData.items} />
+            </div>
+          </div>
         </Container>
       </Layout>
     </>

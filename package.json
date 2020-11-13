@@ -17,6 +17,7 @@
     "next": "latest",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-icons": "^3.11.0",
     "react-slick": "^0.27.11",
     "sass": "^1.26.11",
     "slick-carousel": "^1.8.1"

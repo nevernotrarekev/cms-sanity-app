@@ -10,6 +10,9 @@ import PostTitle from "../../components/post-title";
 import Head from "next/head";
 import { CMS_NAME } from "../../lib/constants";
 import Link from "next/link";
+import PrevNext from "../../components/prev-next";
+import markdownStyles from "../../components/markdown-styles.module.css";
+import BlockContent from "@sanity/block-content-to-react";
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
@@ -23,18 +26,16 @@ export default function Post({ post, morePosts, preview }) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article>
+            <article className="mb-100">
               <Head>
                 <title>
                   {post.title} | Next.js Blog Example with {CMS_NAME}
                 </title>
                 {/* <meta property="og:image" content={post.ogImage.url} /> */}
               </Head>
-              <div className="flex items-center justify-center grid grid-cols-12">
-                <div className="col-span-1">
-                  <Link as={`/posts/${morePosts[0].slug}`} href="/posts/[slug]">
-                    <a>Previous </a>
-                  </Link>
+              <div className="flex items-center justify-center grid grid-cols-12 gap-8 pt-8 py-8">
+                <div className="col-span-1 mr-5">
+                  <PrevNext slug={morePosts[0].slug} text={"Previous"} />
                 </div>
                 <div className="col-span-10">
                   <PostHeader
@@ -45,18 +46,25 @@ export default function Post({ post, morePosts, preview }) {
                     type={post.type}
                   />
                 </div>
-                <div className="col-span-1 justify-self-end">
-                  <Link as={`/posts/${morePosts[1].slug}`} href="/posts/[slug]">
-                    <a>Next </a>
-                  </Link>
+                <div className="col-span-1 justify-self-end ml-5">
+                  <PrevNext slug={morePosts[1].slug} text={"Next"} />
                 </div>
-                <div className="col-start-2 col-span-10">
-                  <PostBody content={post.content} credits={post.credits} />
+                <div className="col-span-5 flex-grow">
+                  <h4>About</h4>
+                  <BlockContent
+                    blocks={post.content}
+                    className={markdownStyles.markdown}
+                  />
+                </div>
+                <div className="col-start-9 col-span-4 flex-grow">
+                  <h4>Credits</h4>
+                  <BlockContent
+                    blocks={post.credits}
+                    className={markdownStyles.markdown}
+                  />
                 </div>
               </div>
             </article>
-            <SectionSeparator />
-            {/* {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
           </>
         )}
       </Container>

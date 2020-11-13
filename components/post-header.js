@@ -3,6 +3,7 @@ import Date from "../components/date";
 import CoverImage from "../components/cover-image";
 import PostTitle from "../components/post-title";
 import Vimeo from "@u-wave/react-vimeo";
+import styles from "./post-header.module.scss";
 
 export default function PostHeader({
   title,

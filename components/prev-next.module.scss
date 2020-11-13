@@ -1,0 +1,17 @@
+.link {
+  font-size: 18px;
+  svg {
+    width: 25px;
+    margin-left: 18px;
+  }
+}
+
+.linkInnerWrap {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  line-height: 28px;
+  border-bottom: 1px solid #f25b5d;
+  padding-top: 60px;
+}

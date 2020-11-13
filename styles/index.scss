@@ -9,6 +9,7 @@
 @layer base {
   body {
     background: #f3ede0;
+    color: #12416c;
   }
   svg {
     width: 100%;
@@ -19,8 +20,12 @@
   h1 {
     font-size: 5rem;
   }
+  h3 {
+    font-size: 38px;
+  }
   h4 {
-    font-size: 2.5rem;
+    font-size: 18px;
+    font-weight: bold;
   }
 }
 .btn-blue {
@@ -39,4 +44,26 @@
 .slick-list {
   -webkit-perspective: 2000;
   -webkit-backface-visibility: hidden;
+}
+
+.slick-slide,
+.slick-slide[aria-hidden="true"]:not(.slick-cloned)
+  ~ .slick-cloned[aria-hidden="true"] {
+  div {
+    opacity: 1;
+  }
+}
+/* slide when active/center */
+.slick-center,
+.slick-slide[aria-hidden="true"]:not([tabindex="-1"])
+  + .slick-cloned[aria-hidden="true"] {
+  div {
+    opacity: 1;
+  }
+}
+
+.slick-dots {
+  li {
+    width: auto !important;
+  }
 }

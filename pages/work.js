@@ -11,10 +11,14 @@ export default function Index({ allPosts, preview }) {
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>Mondial</title>
         </Head>
         <Container>
-          {posts.length > 0 && <ProjectsGrid posts={posts} />}
+          {posts.length > 0 && (
+            <div className="mb-100">
+              <ProjectsGrid posts={posts} />
+            </div>
+          )}
         </Container>
       </Layout>
     </>

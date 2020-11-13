@@ -37,7 +37,13 @@ const Carousel = ({ items }) => {
                 className={cn("bg-navy", styles.container)}
                 key={i}
               >
-                <div className={cn("text-white", styles.videoOverlay)}>
+                <div
+                  className={cn(
+                    "text-white",
+                    styles.videoOverlay,
+                    showPoster && styles.showPoster
+                  )}
+                >
                   Watch Reel
                 </div>
                 <Vimeo

@@ -15,57 +15,59 @@ export default function Index({ aboutData, preview }) {
           <title>Next.js Blog Example with {CMS_NAME}</title>
         </Head>
         <Container>
-          <h1>{aboutData.pageTitle}</h1>
-          <div className="grid grid-cols-10 gap-8">
-            <div className="col-span-10 md:col-span-5">
-              <h3 className>{aboutData.aboutSectionTitle}</h3>
-              <div className="mt-6">
-                <BlockContent
-                  blocks={aboutData.aboutContent}
-                  className={markdownStyles.markdown}
+          <div className="mb-100">
+            <h1>{aboutData.pageTitle}</h1>
+            <div className="grid grid-cols-10 gap-8 mt-12">
+              <div className="col-span-10 md:col-span-5">
+                <h4 className>{aboutData.aboutSectionTitle}</h4>
+                <div className="mt-6">
+                  <BlockContent
+                    blocks={aboutData.aboutContent}
+                    className={markdownStyles.markdown}
+                  />
+                </div>
+              </div>
+              <div className="col-span-10 md:col-span-5 self-center">
+                <img
+                  src={imageBuilder
+                    .image(aboutData.aboutImage)
+                    .width(612)
+                    .height(409)
+                    .url()}
                 />
               </div>
             </div>
-            <div className="col-span-10 md:col-span-5 self-center">
-              <img
-                src={imageBuilder
-                  .image(aboutData.aboutImage)
-                  .width(612)
-                  .height(409)
-                  .url()}
-              />
-            </div>
-          </div>
-          <div className="grid grid-cols-10 gap-8 mt-5 md:mt-10">
-            <div className="col-span-5 md:col-span-3">
-              <img
-                src={imageBuilder
-                  .image(aboutData.aboutImage2)
-                  .width(338)
-                  .height(519)
-                  .url()}
-              />
-            </div>
-            <div className="col-span-5 md:col-span-3">
-              <img
-                src={imageBuilder
-                  .image(aboutData.aboutImage3)
-                  .width(338)
-                  .height(519)
-                  .url()}
-              />
-            </div>
-            <div className="col-span-10 md:col-span-4 self-center">
-              <h3>{aboutData.subsection1Title}</h3>
-              <BlockContent
-                blocks={aboutData.subsection1Content}
-                className={markdownStyles.markdown}
-              />
-              <h3>{aboutData.subsection2Title}</h3>
-              <BlockContent
-                blocks={aboutData.subsection2Content}
-                className={markdownStyles.markdown}
-              />
+            <div className="grid grid-cols-10 gap-8 mt-8 md:mt-10">
+              <div className="col-span-5 md:col-span-3">
+                <img
+                  src={imageBuilder
+                    .image(aboutData.aboutImage2)
+                    .width(338)
+                    .height(519)
+                    .url()}
+                />
+              </div>
+              <div className="col-span-5 md:col-span-3">
+                <img
+                  src={imageBuilder
+                    .image(aboutData.aboutImage3)
+                    .width(338)
+                    .height(519)
+                    .url()}
+                />
+              </div>
+              <div className="col-span-10 md:col-span-3 self-center">
+                <h4 className="mb-4">{aboutData.subsection1Title}</h4>
+                <BlockContent
+                  blocks={aboutData.subsection1Content}
+                  className={markdownStyles.markdown}
+                />
+                <h4 className="mb-4">{aboutData.subsection2Title}</h4>
+                <BlockContent
+                  blocks={aboutData.subsection2Content}
+                  className={markdownStyles.markdown}
+                />
+              </div>
             </div>
           </div>
         </Container>

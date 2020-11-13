@@ -2,10 +2,7 @@ module.exports = {
   purge: {
     enabled: true,
     layers: ["components", "utilities"],
-    content: [
-      "./components/*.js",
-      "./pages/*.js",
-    ],
+    content: ["./components/*.js", "./pages/*.js"],
   },
   theme: {
     maxWidth: {
@@ -38,6 +35,7 @@ module.exports = {
       },
       spacing: {
         28: "7rem",
+        100: "100px",
       },
       letterSpacing: {
         tighter: "-.04em",
