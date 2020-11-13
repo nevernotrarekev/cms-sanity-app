@@ -63,7 +63,12 @@
 }
 
 .slick-dots {
+  bottom: -55px !important;
+  font-size: 30px !important;
   li {
     width: auto !important;
+    &:not(:first-of-type) {
+      margin-left: 20px;
+    }
   }
 }

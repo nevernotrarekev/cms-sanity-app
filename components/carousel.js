@@ -8,7 +8,6 @@ const Carousel = ({ items }) => {
   const [showPoster, setShowPoster] = useState();
   const videoClick = () => {
     setShowPoster((showPoster) => !showPoster);
-    console.log("play the video or pause the video");
   };
   const settings = {
     slidesToShow: 1,

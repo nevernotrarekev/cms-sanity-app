@@ -20,7 +20,7 @@ export default function Index({ allPosts, allFeatured, homeData, preview }) {
           <Intro text={homeData.text} image={homeData.illo} />
           {posts.length > 0 && <Featured posts={posts} />}
         </Container>
-        <div className="my-12">
+        <div className="mt-12 mb-200">
           <Carousel items={allFeatured} />
         </div>
       </Layout>
