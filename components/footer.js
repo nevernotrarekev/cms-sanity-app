@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="text-white bg-navy pb-12">
       <Container>
         <div className="grid grid-cols-12 pt-28">
-          <div className="col-span-5">
+          <div className={styles.emailWrap}>
             <div className="">
               <h3 className={styles.emailTitle}>Drop us a line:</h3>
               <a
@@ -22,7 +22,7 @@ export default function Footer() {
             <div className="mt-10">
               <h4 className="">Mondial Creative</h4>
 
-              <div className="flex flex-row justify-between mt-6">
+              <div className="flex flex-col md:flex-row justify-between mt-6">
                 <a
                   className=""
                   target="_blank"
@@ -45,7 +45,7 @@ export default function Footer() {
           <div className={cn("col-start-8 col-span-4", styles.footerIllo)}>
             <FooterIllo />
           </div>
-          <div className={cn("col-span-1", styles.attribute)}>
+          <div className={styles.attribute}>
             <div>
               brothered with:
               <TinyLion />

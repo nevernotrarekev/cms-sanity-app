@@ -2,6 +2,16 @@
   margin-left: 20px;
 }
 
+.emailWrap {
+  grid-column: 1 / -1;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 1023px) {
+    grid-column: 1 / 5;
+    margin-bottom: 0;
+  }
+}
+
 .email {
   font-size: 22px;
   border-bottom: 1px solid #f25b5d;
@@ -11,8 +21,22 @@
 
 .footerIllo {
   margin-bottom: -48px;
+  display: block;
+  grid-column-start: unset;
+  @media screen and (min-width: 1023px) {
+    display: grid;
+    grid-column-start: 8;
+  }
 }
 
 .attribute {
   align-self: flex-end;
+  display: block;
+  grid-column-start: unset;
+  grid-column: 6;
+  @media screen and (min-width: 1023px) {
+    display: grid;
+    grid-column-start: 8;
+    grid-column: span 1;
+  }
 }
