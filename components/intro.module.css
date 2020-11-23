@@ -1,6 +1,7 @@
 .stylesH4 {
   font-size: 57px;
   line-height: 1.03;
+  font-weight: regular;
 }
 
 @media only screen and (max-width: 1200px) {

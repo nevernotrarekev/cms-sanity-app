@@ -71,6 +71,7 @@
 .link {
   font-size: 1.625rem;
   line-height: 1.08;
+  font-weight: bold;
   @media screen and (max-width: 768px) {
     & + & {
       margin-top: 20px;

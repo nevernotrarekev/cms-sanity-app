@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 export default function Header() {
   const router = useRouter();
-  const [burgerOpen, setBurgerOpen] = useState(true);
+  const [burgerOpen, setBurgerOpen] = useState(false);
   const classes = {
     links: `${styles.links} ${burgerOpen ? "open" : ""}`,
     link: `ml-12 ${styles.link}`,
@@ -17,7 +17,7 @@ export default function Header() {
   useEffect(() => {
     const handleRouteComplete = (url) => {
       console.log("App changed to: ", url);
-      setBurgerOpen(false);
+      // setBurgerOpen(false);
     };
 
     router.events.on("routeChangeComplete", handleRouteComplete);
