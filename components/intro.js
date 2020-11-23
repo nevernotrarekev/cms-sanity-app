@@ -11,14 +11,14 @@ export default function Intro({ text, image }) {
   );
   // easily combine tailwind and css modules
   const classes = {
-    introtext: `col-span-6 md:col-span-5 mt-10 text-carnation ${styles.stylesH4}`,
+    introtext: `col-span-8 md:col-span-5 mt-10 text-carnation ${styles.stylesH4}`,
   };
 
   return (
     <section className="mx-auto max-w-mid">
       <div className="grid gap-8 grid-cols-12 flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
         <h4 className={classes.introtext}>{text}</h4>
-        <div className="col-span-5 md:col-span-7 mx-auto mt-12 md:mt-0">
+        <div className="col-span-4 md:col-span-7 mx-auto mt-12 md:mt-0">
           {illo}
         </div>
       </div>
