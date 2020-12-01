@@ -1,10 +1,39 @@
+.previous {
+  top: 50%;
+  left: 50px;
+  position: absolute;
+  transform: translate(0, -50%) rotate(45deg);
+  padding: 20px;
+  width: 50px;
+  height: 50px;
+  border-left: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  cursor: pointer;
+}
+
+.next {
+  top: 50%;
+  right: 50px;
+  position: absolute;
+  transform: translate(0, -50%) rotate(45deg);
+  padding: 20px;
+  width: 50px;
+  height: 50px;
+  border-right: 4px solid #fff;
+  border-top: 4px solid #fff;
+  cursor: pointer;
+}
+
 .overlay {
-  // width: 586px;
   top: 50%;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
   padding: 20px;
+
+  &.overlayVideo {
+    width: 50%;
+  }
 }
 
 .playGridItem {

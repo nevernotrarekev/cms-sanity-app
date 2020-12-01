@@ -8,10 +8,10 @@ import Modal from "@material-ui/core/Modal";
 
 const PlayGrid = ({ items }) => {
   const [openUser, setOpenUser] = useState(false);
-  const [overlayitem, setOverlayitem] = useState(0);
+  const [overlayItem, setOverlayItem] = useState(0);
   const handleOpenUser = (index) => {
     setOpenUser(true);
-    setOverlayitem(index);
+    setOverlayItem(index);
   };
 
   const handleCloseUser = () => {
@@ -28,19 +28,44 @@ const PlayGrid = ({ items }) => {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        <div className={styles.overlay}>
-          {items[overlayitem].playImage && (
-            <img src={imageBuilder.image(items[overlayitem].playImage).url()} />
-          )}
-          {items[overlayitem].vimeoid && (
-            <div>
-              <Vimeo
-                className="embed-responsive aspect-ratio-16/9"
-                video={items[overlayitem].vimeoid}
+        <>
+          <div
+            className={styles.previous}
+            onClick={() =>
+              setOverlayItem(
+                overlayItem - 1 < 0 ? items.length - 1 : overlayItem - 1
+              )
+            }
+          />
+          <div
+            className={cn(
+              styles.overlay,
+              items && items[overlayItem].vimeoid && styles.overlayVideo
+            )}
+          >
+            {items && items[overlayItem].playImage && (
+              <img
+                src={imageBuilder.image(items[overlayItem].playImage).url()}
               />
-            </div>
-          )}
-        </div>
+            )}
+            {items && items[overlayItem].vimeoid && (
+              <div>
+                <Vimeo
+                  className="embed-responsive aspect-ratio-16/9"
+                  video={items[overlayItem].vimeoid}
+                />
+              </div>
+            )}
+          </div>
+          <div
+            className={styles.next}
+            onClick={() =>
+              setOverlayItem(
+                overlayItem < items.length - 1 ? overlayItem + 1 : 0
+              )
+            }
+          />
+        </>
       </Modal>
       <Masonry
         breakpointCols={3}
@@ -54,7 +79,6 @@ const PlayGrid = ({ items }) => {
                 className={cn(
                   styles.playGridItem,
                   item.vimeoid ? "col-span-8" : "col-span-4"
-                  // index === 8 && "col-start-9 col-span-4"
                 )}
                 key={`play-item-${index}`}
                 onClick={() => handleOpenUser(index)}
@@ -74,7 +98,6 @@ const PlayGrid = ({ items }) => {
             );
           })}
       </Masonry>
-      {/* </div> */}
     </>
   );
 };
