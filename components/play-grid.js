@@ -20,6 +20,10 @@ const PlayGrid = ({ items }) => {
   const classes = {
     playGridItem: `${styles.playGridItem}`,
   };
+  const breakpointColumnsObj = {
+    default: 3,
+    500: 1,
+  };
   return (
     <>
       <Modal
@@ -68,7 +72,7 @@ const PlayGrid = ({ items }) => {
         </>
       </Modal>
       <Masonry
-        breakpointCols={3}
+        breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >

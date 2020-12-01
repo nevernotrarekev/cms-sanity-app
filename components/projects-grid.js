@@ -1,7 +1,7 @@
 import react, { useState } from "react";
 import PostPreview from "./post-preview";
 import classNames from "classnames";
-import styles from "./projects-grid.module.css";
+import styles from "./projects-grid.module.scss";
 
 export default function ProjectsGrid({ posts }) {
   const [projects, setProjects] = useState(posts);
@@ -22,8 +22,8 @@ export default function ProjectsGrid({ posts }) {
     <section>
       <div className="flex flex-col md:flex-row w-full py-12">
         <h1>Our Work</h1>
-        <header className="ml-auto w-full">
-          <ul className="flex flex-row justify-end">
+        <header className="ml-auto w-full flex">
+          <ul className="flex flex-row justify-end items-center">
             {filters &&
               filters.map((filter) => {
                 return (
