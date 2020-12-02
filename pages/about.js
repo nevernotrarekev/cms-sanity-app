@@ -12,7 +12,7 @@ export default function Index({ aboutData, preview }) {
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>About page {CMS_NAME}</title>
         </Head>
         <Container>
           <div className="mb-100">

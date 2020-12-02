@@ -8,13 +8,12 @@ import { CMS_NAME } from "../lib/constants";
 import Carousel from "../components/carousel";
 
 export default function Index({ allPosts, allFeatured, homeData, preview }) {
-  console.log(allFeatured);
   const posts = allPosts;
   return (
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>Studio for {CMS_NAME}</title>
         </Head>
         <Container>
           <Intro text={homeData.text} image={homeData.illo} />

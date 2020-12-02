@@ -11,7 +11,7 @@ export default function Index({ allPosts, preview }) {
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Mondial</title>
+          <title>Work Page {CMS_NAME}</title>
         </Head>
         <Container>
           {posts.length > 0 && (

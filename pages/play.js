@@ -6,12 +6,11 @@ import { CMS_NAME } from "../lib/constants";
 import PlayGrid from "../components/play-grid";
 
 export default function Index({ allPlay, playData, preview }) {
-  console.log(playData);
   return (
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>Play page {CMS_NAME}</title>
         </Head>
         <Container>
           <div className="mb-100">
