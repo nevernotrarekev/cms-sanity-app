@@ -1,4 +1,3 @@
-import react, { useState } from "react";
 import Link from "next/link";
 import PostPreview from "./post-preview";
 import styles from "./featured.module.scss";
@@ -10,8 +9,6 @@ export default function Featured({ posts }) {
     <section>
       <div className="flex flex-wrap">
         {posts.map((post, index) => {
-          console.log("THE POST", post);
-
           return (
             <div key={post.slug} className={styles.gridItem}>
               <PostPreview

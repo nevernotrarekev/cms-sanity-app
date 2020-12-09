@@ -21,8 +21,6 @@ export default function PostPreview({
     }`,
   };
 
-  console.log(styles);
-
   return (
     <Link as={`/posts/${slug}`} href="/posts/[slug]">
       <a className={classes.link}>
