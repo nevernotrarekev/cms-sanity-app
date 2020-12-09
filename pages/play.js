@@ -6,6 +6,8 @@ import { CMS_NAME } from "../lib/constants";
 import PlayGrid from "../components/play-grid";
 
 export default function Index({ allPlay, playData, preview }) {
+  console.log("play data", playData);
+
   return (
     <>
       <Layout preview={preview}>

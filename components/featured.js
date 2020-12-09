@@ -10,6 +10,8 @@ export default function Featured({ posts }) {
     <section>
       <div className="flex flex-wrap">
         {posts.map((post, index) => {
+          console.log("THE POST", post);
+
           return (
             <div key={post.slug} className={styles.gridItem}>
               <PostPreview
@@ -18,6 +20,7 @@ export default function Featured({ posts }) {
                 brand={post.brand}
                 coverImage={post.coverImage}
                 slug={post.slug}
+                vimeo={post.vimeoid}
                 featured
               />
             </div>

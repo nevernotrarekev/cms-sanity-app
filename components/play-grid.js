@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import { useState } from "react";
 import Vimeo from "@u-wave/react-vimeo";
 import { imageBuilder } from "../lib/sanity";
 import styles from "./play-grid.module.scss";
