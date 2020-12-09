@@ -30,6 +30,7 @@ export default function ProjectsGrid({ posts }) {
                   <li
                     className="mx-3"
                     onClick={() => handleFilter(filter.slug)}
+                    style={{ cursor: "pointer" }}
                   >
                     {filter.name}
                   </li>
