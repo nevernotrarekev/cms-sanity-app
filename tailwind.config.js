@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     maxWidth: {
       mid: "1240px",
-      wide: "1380px",
+      wide: "1440px",
     },
     width: {
       "168px": "168px",
