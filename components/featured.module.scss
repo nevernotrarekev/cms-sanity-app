@@ -14,7 +14,7 @@
   }
 
   &:not(:first-child) {
-    margin-top: 30px;
+    margin-top: 50px;
     padding-top: 36%;
   }
 
@@ -38,8 +38,8 @@
   }
 
   &:nth-child(2n) {
-    width: calc(60% - 30px);
-    margin-right: 30px;
+    width: calc(60% - 50px);
+    margin-right: 50px;
     @media screen and (max-width: 768px) {
       width: 100%;
       margin-right: 0;
@@ -69,10 +69,10 @@
   }
 
   &:nth-child(4n) {
-    width: calc(40% - 30px);
-    margin-right: 30px;
+    width: calc(40% - 50px);
+    margin-right: 50px;
     padding-top: 64%;
-    margin-top: calc(-28% + 30px);
+    margin-top: calc(-28% + 50px);
 
     iframe {
       height: auto;

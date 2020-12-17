@@ -16,9 +16,9 @@ export default function Intro({ text, image }) {
 
   return (
     <section className="mx-auto max-w-wide">
-      <div className="grid gap-8 grid-cols-12 flex-row flex items-center md:justify-between mt-16 mb-16 ">
+      <div className="grid gap-8 grid-cols-12 flex-row flex items-center md:justify-between mt-16 mb-16">
         <h4 className={classes.introtext}>{text}</h4>
-        <div className="col-span-4 md:col-span-4 mx-auto mt-12 md:mt-0">
+        <div className="col-span-4 md:col-span-3 mx-auto mt-12 md:mt-0">
           {illo}
         </div>
       </div>
