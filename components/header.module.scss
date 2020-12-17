@@ -78,3 +78,25 @@
     }
   }
 }
+
+.fixed-nav {
+  position: fixed;
+  transform: translateY(-150px);
+  top: 0;
+  transition: 0.35s ease-in-out;
+  z-index: 122;
+  opacity: 0;
+}
+
+.fixed-nav.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.fixed-nav .links.open {
+  display: none;
+}
+
+.fixed-nav img.open {
+  display: none;
+}

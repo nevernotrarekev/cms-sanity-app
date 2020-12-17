@@ -117,3 +117,8 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+
+.about-page .slick-dots {
+    bottom: -35px !important;
+}

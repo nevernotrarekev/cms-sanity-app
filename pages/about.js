@@ -5,9 +5,13 @@ import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 import markdownStyles from "../components/markdown-styles.module.css";
 import BlockContent from "@sanity/block-content-to-react";
+import Slider from "react-slick";
+
 import { imageBuilder } from "../lib/sanity";
 
 export default function Index({ aboutData, preview }) {
+  console.log("about", aboutData);
+
   return (
     <>
       <Layout preview={preview}>
@@ -27,17 +31,28 @@ export default function Index({ aboutData, preview }) {
                   />
                 </div>
               </div>
-              <div className="col-span-10 md:col-span-5 self-center">
-                <img
-                  src={imageBuilder
-                    .image(aboutData.aboutImage)
-                    .width(612)
-                    .height(409)
-                    .url()}
-                />
+              <div className="col-span-10 md:col-span-5 self-center about-page">
+                <Slider
+                  arrows={false}
+                  slidesToShow={1}
+                  dots={true}
+                  adaptiveHeight={true}
+                  variableWidth={true}
+                  drag={true}
+                >
+                  {aboutData.imageGallery.map((image) => (
+                    <img
+                      src={imageBuilder
+                        .image(image)
+                        .width(612)
+                        .height(409)
+                        .url()}
+                    />
+                  ))}
+                </Slider>
               </div>
             </div>
-            <div className="grid grid-cols-10 gap-8 mt-8 md:mt-10">
+            <div className="grid grid-cols-10 gap-8 mt-12 md:mt-12">
               <div className="col-span-5 md:col-span-3">
                 <img
                   src={imageBuilder
