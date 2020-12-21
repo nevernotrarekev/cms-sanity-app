@@ -30,11 +30,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   z-index: 3;
   font-size: 24px;
   pointer-events: none;
+  color: #f3ede0;
 
   &.showPoster {
     opacity: 0;
   }
+
+  img {
+    margin-bottom: 12px;
+  }
 }
+
+.single-item-container {
+  position: relative;
+
+  .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+  }
+}
+
+.paginate {
+  margin: 0 30px;
+  text-decoration: none !important;
+  display: block;
+
+  @media (max-width: 720px) {
+    margin: 0;
+  }
+}
+
+

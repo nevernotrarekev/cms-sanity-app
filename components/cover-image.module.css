@@ -1,5 +1,13 @@
 .image {
-  /* max-height: 330px; */
   height: 100%;
   width: 100%;
+}
+
+.overlay {
+  transition: 0.2s ease;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
 }

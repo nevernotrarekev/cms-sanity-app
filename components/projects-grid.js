@@ -1,14 +1,14 @@
 import react, { useState } from "react";
-import PostPreview from "./post-preview";
-import classNames from "classnames";
+import CoverImage from "./cover-image";
+import Link from "next/link";
 import styles from "./projects-grid.module.scss";
 
 export default function ProjectsGrid({ posts }) {
   const [projects, setProjects] = useState(posts);
   const filters = [
     { name: "All", slug: "all" },
-    { name: "Animation/VFX", slug: "animation-vfx" },
     { name: "Editorial", slug: "editorial" },
+    { name: "Animation/VFX", slug: "animation-vfx" },
     { name: "Color", slug: "color" },
   ];
   const handleFilter = (filter) => {
@@ -18,6 +18,8 @@ export default function ProjectsGrid({ posts }) {
       setProjects(posts.filter((post) => post.type === filter));
     }
   };
+
+  console.log("POSTS", posts);
   return (
     <section>
       <div className="flex flex-col md:flex-row w-full py-12">
@@ -28,6 +30,7 @@ export default function ProjectsGrid({ posts }) {
               filters.map((filter) => {
                 return (
                   <li
+                    key={filter.slug}
                     className="mx-3"
                     onClick={() => handleFilter(filter.slug)}
                     style={{ cursor: "pointer" }}
@@ -43,12 +46,25 @@ export default function ProjectsGrid({ posts }) {
         {projects.map((post, index) => {
           return (
             <div key={post.slug} className={styles.columns}>
-              <PostPreview
-                title={post.title}
-                brand={post.brand}
-                coverImage={post.coverImage}
-                slug={post.slug}
-              />
+              <Link as={`/posts/${post.slug}`} href="/posts/[slug]">
+                <a className={styles.link}>
+                  <div className={`relative h-full bg-navy ${styles.item}`}>
+                    <CoverImage
+                      isLink
+                      index={index}
+                      slug={post.slug}
+                      image={post.coverImage}
+                    />
+
+                    <div className={styles.title}>
+                      <h3 className="text-3xl leading-snug">
+                        <span className="font-bold">{post.title}</span> /{" "}
+                        {post.brand}
+                      </h3>
+                    </div>
+                  </div>
+                </a>
+              </Link>
             </div>
           );
         })}

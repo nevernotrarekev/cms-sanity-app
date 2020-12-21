@@ -72,20 +72,38 @@
   font-size: 1.625rem;
   line-height: 1.08;
   font-weight: bold;
+  letter-spacing: 0.065rem;
+  display: inline;
+
+  &:hover,
+  &:active {
+    border-bottom: 2px solid;
+  }
+
   @media screen and (max-width: 768px) {
     & + & {
       margin-top: 20px;
     }
   }
+
+  &.active {
+    border-bottom: 2px solid;
+
+    @media (max-width: 768px) {
+      border-bottom: none;
+    }
+  }
 }
 
 .fixed-nav {
-  position: fixed;
+  position: sticky;
   transform: translateY(-150px);
   top: 0;
   transition: 0.35s ease-in-out;
   z-index: 122;
   opacity: 0;
+  padding-top: 3rem;
+  margin-bottom: 0px;
 }
 
 .fixed-nav.show {

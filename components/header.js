@@ -12,6 +12,8 @@ export default function Header() {
   const [burgerOpen, setBurgerOpen] = useState(false);
   const [showFixedNav, setShowFixedNav] = useState(false);
 
+  console.log("router", router);
+
   const classes = {
     links: `${styles.links} ${burgerOpen ? "open" : ""}`,
     link: `ml-12 ${styles.link}`,
@@ -60,13 +62,34 @@ export default function Header() {
         </div>
         <div className={cn(styles.links, burgerOpen ? styles.open : null)}>
           <Link href={"/work"}>
-            <a className={classes.link}>Work</a>
+            <a
+              className={cn(
+                classes.link,
+                router.pathname === "/work" ? styles.active : null
+              )}
+            >
+              Work
+            </a>
           </Link>
           <Link href={"/play"}>
-            <a className={classes.link}>Play</a>
+            <a
+              className={cn(
+                classes.link,
+                router.pathname === "/play" ? styles.active : null
+              )}
+            >
+              Play
+            </a>
           </Link>
           <Link href={"/about"}>
-            <a className={classes.link}>About</a>
+            <a
+              className={cn(
+                classes.link,
+                router.pathname === "/about" ? styles.active : null
+              )}
+            >
+              About
+            </a>
           </Link>
         </div>
       </nav>

@@ -31,7 +31,7 @@ export default function PostPreview({
             <Vimeo video={vimeo} background autoplay loop />
           )}
           <div className={styles.title}>
-            <h3 className="text-3xl leading-snug text-white">
+            <h3 className="text-3xl leading-snug">
               <span className="font-bold">{title}</span> / {brand}
             </h3>
           </div>

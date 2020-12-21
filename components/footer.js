@@ -6,25 +6,24 @@ import TinyLion from "./tiny-lion";
 
 export default function Footer() {
   return (
-    <footer className="text-white bg-navy pb-12">
+    <footer className="bg-navy">
       <Container>
-        <div className="grid grid-cols-12 pt-28">
-          <div className={styles.emailWrap}>
-            <div className="">
-              <h3 className={styles.emailTitle}>Drop us a line:</h3>
+        <div className={styles.footer}>
+          <div className={styles.details}>
+            <div className={styles.top}>
+              <h3>Drop us a line:</h3>
               <a
                 className={cn("text-carnation", styles.email)}
                 href="emailto:mondial@mondialcreative.com"
               >
-                mondial@mondialcreative.com
+                Mondial@MondialCreative.com
               </a>
             </div>
-            <div className="mt-10">
-              <h4 className="">Mondial Creative</h4>
 
-              <div className="flex flex-col md:flex-row justify-between mt-6">
+            <div className={styles.bottom}>
+              <h4>Mondial Creative</h4>
+              <div className={styles["flex-col"]}>
                 <a
-                  className=""
                   target="_blank"
                   href="http://maps.google.com/?q=2006 E Franklin St suite 102 Richmond, VA 23223"
                 >
@@ -34,7 +33,7 @@ export default function Footer() {
                   <br />
                   Richmond, VA 23223
                 </a>
-                <div className="">
+                <div className={styles.secondary}>
                   <div className="">mondial@mondialcreative.com</div>
                   <div className="">804-303-4528</div>
                   <div className="">© MONDIAL {new Date().getFullYear()}</div>
@@ -42,17 +41,32 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className={cn("col-start-8 col-span-4", styles.footerIllo)}>
-            <FooterIllo />
-          </div>
-          <div className={styles.attribute}>
-            <div>
-              brothered with:
+          <div className={styles["footer-right"]}>
+            <div className={styles["illo-wrap"]}>
+              <div className={styles.illo}>
+                <FooterIllo />
+              </div>
+            </div>
+            <div className={styles.brothered}>
+              <h4>Brothered With:</h4>
               <TinyLion />
             </div>
           </div>
         </div>
       </Container>
     </footer>
+
+    //       <div className={cn("col-start-8 col-span-4", styles.footerIllo)}>
+    //         <FooterIllo />
+    //       </div>
+    //       <div className={styles.attribute}>
+    //         <div>
+    //           Brothered With:
+    //           <TinyLion />
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </Container>
+    // </footer>
   );
 }

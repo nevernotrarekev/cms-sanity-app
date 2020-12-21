@@ -109,7 +109,7 @@
   margin: 0 auto;
   svg {
     width: 25px;
-    margin-left: 18px;
+    margin-left: 12px;
   }
 }
 
@@ -119,6 +119,13 @@
   flex-direction: row;
   align-items: center;
   line-height: 40px;
-  border-bottom: 1px solid #f25b5d;
+  border-bottom: 2px solid transparent;
   padding-top: 60px;
+  padding-left: 4px;
+  padding-right: 4px;
+  transition: .2s ease;
+}
+
+.linkInnerWrap:hover {
+  border-bottom: 2px solid #f25b5d;
 }

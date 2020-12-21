@@ -1,42 +1,94 @@
-.emailTitle {
-  margin-left: 20px;
-}
+.footer {
+  display: grid;
+  grid-template-columns: 60% 40%;
 
-.emailWrap {
-  grid-column: 1 / -1;
-  margin-bottom: 40px;
+  padding-bottom: 32px;
+  padding-top: 90px;
+  overflow: hidden;
 
-  @media screen and (min-width: 1023px) {
-    grid-column: 1 / 5;
-    margin-bottom: 0;
+  @media (max-width: 1022px) {
+    display: flex;
+    flex-direction: column;
   }
 }
 
-.email {
-  font-size: 22px;
-  border-bottom: 1px solid #f25b5d;
-  line-height: 2.2;
-  padding: 0 20px;
-}
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 
-.footerIllo {
-  margin-bottom: -48px;
-  display: block;
-  grid-column-start: unset;
-  @media screen and (min-width: 1023px) {
-    display: grid;
-    grid-column-start: 8;
+  h3 {
+    font-size: 32px;
+    color: #f3ede0;
+    font-weight: 600;
+  }
+
+  .email {
+    line-height: 2;
+    border-bottom: 2px solid #f25b5d;
+    width: fit-content;
+    font-size: 18px;
+  }
+
+  .top {
+    margin-bottom: 48px;
+  }
+
+  .bottom {
+    h4 {
+      color: #f3ede0;
+      margin-bottom: 12px;
+    }
+
+    .flex-col {
+      display: flex;
+      color: #f3ede0;
+
+      .secondary {
+        margin-left: 90px;
+      }
+
+      @media (max-width: 720px) {
+        flex-direction: column;
+
+        .secondary {
+          margin-left: 0px;
+        }
+      }
+    }
   }
 }
 
-.attribute {
-  align-self: flex-end;
-  display: block;
-  grid-column-start: unset;
-  grid-column: 6;
-  @media screen and (min-width: 1023px) {
-    display: grid;
-    grid-column-start: 8;
-    grid-column: span 1;
+.footer-right {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.illo-wrap {
+  position: relative;
+
+  .illo {
+    position: absolute;
+    bottom: -48px;
+
+    img {
+      height: 340px;
+    }
+
+    @media (max-width: 1022px) {
+      position: relative;
+    }
+  }
+}
+
+.brothered {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  h4 {
+    color: #f3ede0;
+    margin-bottom: 12px;
   }
 }

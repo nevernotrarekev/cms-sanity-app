@@ -17,6 +17,7 @@ export default function CoverImage({ index, title, image, isLink }) {
   return (
     <div
       className={cn(
+        styles.overlay,
         "w-full h-full",
         isLink &&
           "opacity-75 hover:opacity-40 transition duration-500 ease-in-out"
