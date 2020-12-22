@@ -112,3 +112,9 @@
 .container {
   max-width: 1440px;
 }
+
+@media (max-width: 720px) {
+  .slick-dots li {
+    font-size: 16px;
+  }
+}

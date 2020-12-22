@@ -25,8 +25,15 @@
   align-items: flex-end;
   z-index: 2;
   bottom: 0;
+  height: 100%;
+
+  
 }
 
 .title h3 {
   color: #f3ede0;
+
+  @media (max-width: 720px) {
+    font-size: 22px;
+  }
 }

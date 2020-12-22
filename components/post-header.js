@@ -14,7 +14,10 @@ export default function PostHeader({
 }) {
   return (
     <div className={styles.header}>
-      <div className="flex flex-col lg:flex-row justify-between items-end ">
+      <div
+        className="flex  lg:flex-row justify-between items-end "
+        style={{ marginBottom: "45px" }}
+      >
         <PostTitle>
           <b>{brand}</b> / {title}
         </PostTitle>

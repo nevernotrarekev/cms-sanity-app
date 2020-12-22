@@ -19,6 +19,11 @@ export default function Post({ post, morePosts, preview }) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  const renderPrev = () => <PrevNext slug={morePosts[0].slug} text={"Prev."} />;
+
+  const renderNext = () => <PrevNext slug={morePosts[1].slug} text={"Next"} />;
+
   return (
     <Layout preview={preview}>
       <Container>
@@ -34,10 +39,11 @@ export default function Post({ post, morePosts, preview }) {
                 {/* <meta property="og:image" content={post.ogImage.url} /> */}
               </Head>
               <div className="flex items-center justify-center grid grid-cols-12 gap-8 pt-8 py-8">
-                <div className="col-span-1 mr-5">
-                  <PrevNext slug={morePosts[0].slug} text={"Prev."} />
+                <div
+                  className={`${markdownStyles["next-post-wrap"]} col-span-1 mr-5`}
+                >
+                  {renderPrev()}
                 </div>
-
                 <div className="col-span-10">
                   <PostHeader
                     title={post.title}
@@ -63,8 +69,11 @@ export default function Post({ post, morePosts, preview }) {
                     </div>
                   </div>
                 </div>
-                <div className="col-span-1 justify-self-end ml-5">
-                  <PrevNext slug={morePosts[1].slug} text={"Next"} />
+
+                <div
+                  className={`${markdownStyles["next-post-wrap"]} justify-self-end ml-5`}
+                >
+                  {renderNext()}
                 </div>
               </div>
             </article>

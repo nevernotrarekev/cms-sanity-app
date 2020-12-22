@@ -10,8 +10,6 @@ import Slider from "react-slick";
 import { imageBuilder } from "../lib/sanity";
 
 export default function Index({ aboutData, preview }) {
-  console.log("about", aboutData);
-
   return (
     <>
       <Layout preview={preview}>
@@ -24,7 +22,7 @@ export default function Index({ aboutData, preview }) {
             <div className="grid grid-cols-10 gap-8 mt-12">
               <div className="col-span-10 md:col-span-5">
                 <h4 className>{aboutData.aboutSectionTitle}</h4>
-                <div className="mt-6">
+                <div className="mt-6 about-page">
                   <BlockContent
                     blocks={aboutData.aboutContent}
                     className={markdownStyles.markdown}
@@ -36,9 +34,9 @@ export default function Index({ aboutData, preview }) {
                   arrows={false}
                   slidesToShow={1}
                   dots={true}
-                  adaptiveHeight={true}
-                  variableWidth={true}
+                 
                   drag={true}
+                  
                 >
                   {aboutData.imageGallery.map((image) => (
                     <img
@@ -71,7 +69,9 @@ export default function Index({ aboutData, preview }) {
                     .url()}
                 />
               </div>
-              <div className="col-span-10 md:col-span-3 self-center">
+              <div
+                className={`${markdownStyles.text} col-span-10 md:col-span-3 self-center`}
+              >
                 <h4 className="mb-4">{aboutData.subsection1Title}</h4>
                 <BlockContent
                   blocks={aboutData.subsection1Content}
