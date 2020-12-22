@@ -46,7 +46,6 @@ export default function Post({ post, morePosts, preview }) {
                     vimeoid={post.vimeoid}
                     type={post.type}
                   />
-
                   <div className={markdownStyles.about}>
                     <div>
                       <h4>About</h4>
