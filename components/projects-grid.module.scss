@@ -71,7 +71,6 @@
       padding-top: 64%;
     }
   }
-
 }
 
 .title {
@@ -89,5 +88,12 @@
   color: #f3ede0;
 }
 
-
-
+.filter {
+  border-bottom: 2px solid transparent;
+  transition: 0.2s ease;
+  
+  &:hover {
+    color: #f25b5d;
+    border-bottom: 2px solid #f25b5d;
+  }
+}

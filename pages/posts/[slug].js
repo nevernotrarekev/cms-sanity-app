@@ -35,8 +35,9 @@ export default function Post({ post, morePosts, preview }) {
               </Head>
               <div className="flex items-center justify-center grid grid-cols-12 gap-8 pt-8 py-8">
                 <div className="col-span-1 mr-5">
-                  <PrevNext slug={morePosts[0].slug} text={"Previous"} />
+                  <PrevNext slug={morePosts[0].slug} text={"Prev."} />
                 </div>
+
                 <div className="col-span-10">
                   <PostHeader
                     title={post.title}
@@ -45,23 +46,26 @@ export default function Post({ post, morePosts, preview }) {
                     vimeoid={post.vimeoid}
                     type={post.type}
                   />
+
+                  <div className={markdownStyles.about}>
+                    <div>
+                      <h4>About</h4>
+                      <BlockContent
+                        blocks={post.content}
+                        className={markdownStyles.markdown}
+                      />
+                    </div>
+                    <div>
+                      <h4>Credits</h4>
+                      <BlockContent
+                        blocks={post.credits}
+                        className={markdownStyles.markdown}
+                      />
+                    </div>
+                  </div>
                 </div>
                 <div className="col-span-1 justify-self-end ml-5">
                   <PrevNext slug={morePosts[1].slug} text={"Next"} />
-                </div>
-                <div className="col-span-5 flex-grow">
-                  <h4>About</h4>
-                  <BlockContent
-                    blocks={post.content}
-                    className={markdownStyles.markdown}
-                  />
-                </div>
-                <div className="col-start-9 col-span-4 flex-grow">
-                  <h4>Credits</h4>
-                  <BlockContent
-                    blocks={post.credits}
-                    className={markdownStyles.markdown}
-                  />
                 </div>
               </div>
             </article>

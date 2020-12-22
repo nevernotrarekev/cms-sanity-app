@@ -19,7 +19,6 @@ export default function ProjectsGrid({ posts }) {
     }
   };
 
-  console.log("POSTS", posts);
   return (
     <section>
       <div className="flex flex-col md:flex-row w-full py-12">
@@ -31,9 +30,9 @@ export default function ProjectsGrid({ posts }) {
                 return (
                   <li
                     key={filter.slug}
-                    className="mx-3"
+                    className={`mx-3 ${styles.filter}`}
                     onClick={() => handleFilter(filter.slug)}
-                    style={{ cursor: "pointer" }}
+                    style={{ cursor: "pointer", letterSpacing: '.045rem' }}
                   >
                     {filter.name}
                   </li>

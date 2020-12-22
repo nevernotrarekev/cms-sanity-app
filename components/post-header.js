@@ -13,16 +13,16 @@ export default function PostHeader({
   type,
 }) {
   return (
-    <>
-      <div className="flex flex-col lg:flex-row justify-between items-end lg:mb-12 md:mb-6">
+    <div className={styles.header}>
+      <div className="flex flex-col lg:flex-row justify-between items-end ">
         <PostTitle>
-          {title} / {brand}
+          <b>{brand}</b> / {title}
         </PostTitle>
-        {type}
+        <div className={styles.tag}>{type}</div>
       </div>
       <div className="mb-8 md:mb-16 sm:mx-0">
         <Vimeo className="embed-responsive aspect-ratio-16/9" video={vimeoid} />
       </div>
-    </>
+    </div>
   );
 }

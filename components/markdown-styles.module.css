@@ -16,3 +16,20 @@
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
+
+.about {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-column-gap: 10%;
+}
+
+@media (max-width: 720px) {
+  .about {
+    grid-template-columns: 1fr;
+    grid-row-gap: 45px;
+  }
+}
+
+.about p {
+  font-weight: 400;
+}

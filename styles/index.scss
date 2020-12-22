@@ -20,7 +20,7 @@
     display: inline-block;
   }
   h1 {
-    font-size: 5rem;
+    font-size: 3rem;
   }
   h3 {
     font-size: 38px;
@@ -105,7 +105,10 @@
   border-bottom: 3px solid;
 }
 
-
 .carousel-space {
   margin-bottom: 140px;
+}
+
+.container {
+  max-width: 1440px;
 }
