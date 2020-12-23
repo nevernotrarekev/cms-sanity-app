@@ -17,6 +17,10 @@
 .header {
   margin-bottom: 45px;
 
+  @media (max-width: 720px) {
+    margin-bottom: 0px;
+  }
+
   h1 {
     text-align: left;
 

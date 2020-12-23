@@ -39,8 +39,27 @@
   font-weight: 400;
 }
 
+.next-post-wrap-mobile {
+  display: none;
+}
+
+.post-wrap {
+  grid-column: span 10 / span 10;
+}
+
 @media (max-width: 720px) {
   .next-post-wrap {
     display: none;
+  }
+
+  .next-post-wrap-mobile {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .post-wrap {
+    width: 100%;
+    grid-column: span 12 / span 12;
   }
 }

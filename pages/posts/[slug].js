@@ -38,13 +38,13 @@ export default function Post({ post, morePosts, preview }) {
                 </title>
                 {/* <meta property="og:image" content={post.ogImage.url} /> */}
               </Head>
-              <div className="flex items-center justify-center grid grid-cols-12 gap-8 pt-8 py-8">
+              <div className="flex items-center justify-center grid grid-cols-12 pt-8 py-8">
                 <div
                   className={`${markdownStyles["next-post-wrap"]} col-span-1 mr-5`}
                 >
                   {renderPrev()}
                 </div>
-                <div className="col-span-10">
+                <div className={`col-span-10 ${markdownStyles['post-wrap']}`}>
                   <PostHeader
                     title={post.title}
                     brand={post.brand}
@@ -52,6 +52,7 @@ export default function Post({ post, morePosts, preview }) {
                     vimeoid={post.vimeoid}
                     type={post.type}
                   />
+                 
                   <div className={markdownStyles.about}>
                     <div>
                       <h4>About</h4>
@@ -67,6 +68,10 @@ export default function Post({ post, morePosts, preview }) {
                         className={markdownStyles.markdown}
                       />
                     </div>
+                  </div>
+                  <div className={markdownStyles["next-post-wrap-mobile"]}>
+                    {renderPrev()}
+                    {renderNext()}
                   </div>
                 </div>
 

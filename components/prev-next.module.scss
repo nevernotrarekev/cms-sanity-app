@@ -14,4 +14,9 @@
   line-height: 28px;
   border-bottom: 2px solid #f25b5d;
   padding-top: 60px;
+
+  @media (max-width: 720px) {
+    padding-top: 0px;
+    margin-top: 24px;
+  }
 }
