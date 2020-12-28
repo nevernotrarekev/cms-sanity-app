@@ -9,6 +9,8 @@ import Carousel from "../components/carousel";
 
 export default function Index({ allPosts, allFeatured, homeData, preview }) {
   const posts = allPosts;
+
+  console.log("home data", homeData);
   return (
     <>
       <Layout preview={preview}>
@@ -33,6 +35,9 @@ export async function getStaticProps({ preview = false }) {
   const allPosts = await getAllPostsForHome(preview);
   const allFeatured = await getFeatured(preview);
   const homeData = await getPageData("/");
+
+  console.log("HOMEDATA", homeData);
+
   return {
     props: {
       allPosts,
