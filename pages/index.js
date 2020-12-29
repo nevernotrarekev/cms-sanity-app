@@ -30,7 +30,7 @@ export default function Index({
           <title>Studio for {CMS_NAME}</title>
         </Head>
         <Container>
-          <Intro text={homeData.text} image={homeData.illo} />
+          <Intro text={testData.text} image={testData.illo} />
           {posts.length > 0 && <Featured posts={posts} />}
         </Container>
         <div className="mt-12">
