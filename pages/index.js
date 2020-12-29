@@ -11,18 +11,6 @@ import { useEffect } from "react";
 export default function Index({ allPosts, allFeatured, homeData, preview }) {
   const posts = allPosts;
 
-  const getData = async () => {
-    try {
-      const data = await getPageData("/");
-
-      console.log("DATA FETCH FROM CLIENT", data);
-    } catch (error) {}
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
   return (
     <>
       <Layout preview={preview}>
