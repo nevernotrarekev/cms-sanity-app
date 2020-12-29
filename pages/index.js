@@ -2,13 +2,26 @@ import Container from "../components/container";
 import Featured from "../components/featured";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
-import { getAllPostsForHome, getPageData, getFeatured, getTestData } from "../lib/api";
+import {
+  getAllPostsForHome,
+  getPageData,
+  getFeatured,
+  getTestData,
+} from "../lib/api";
 import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 import Carousel from "../components/carousel";
 
-export default function Index({ allPosts, allFeatured, homeData, preview }) {
+export default function Index({
+  allPosts,
+  allFeatured,
+  homeData,
+  preview,
+  testData,
+}) {
   const posts = allPosts;
+
+  console.log("client side test data", testData);
 
   return (
     <>
@@ -35,9 +48,8 @@ export async function getStaticProps({ preview = false }) {
   const allFeatured = await getFeatured(preview);
   const homeData = await getPageData("/");
 
-  const testData = await getTestData()
-
-  console.log("test data", homeData);
+  const testData = await getTestData();
+  console.log("test data", testData);
 
   return {
     props: {
@@ -45,6 +57,7 @@ export async function getStaticProps({ preview = false }) {
       allFeatured,
       homeData,
       preview,
+      testData,
     },
   };
 }
