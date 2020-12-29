@@ -18,7 +18,6 @@ export default function Index({ allPosts, allFeatured, homeData, preview }) {
           <title>Studio for {CMS_NAME}</title>
         </Head>
         <Container>
-          <div>123</div>
           <Intro text={homeData.text} image={homeData.illo} />
           {posts.length > 0 && <Featured posts={posts} />}
         </Container>
@@ -36,6 +35,8 @@ export async function getStaticProps({ preview = false }) {
   const allPosts = await getAllPostsForHome(preview);
   const allFeatured = await getFeatured(preview);
   const homeData = await getPageData("/");
+
+  console.log("home data", homeData);
 
   return {
     props: {
