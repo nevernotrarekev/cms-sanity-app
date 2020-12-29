@@ -3,6 +3,8 @@ import { imageBuilder } from "../lib/sanity";
 import styles from "./intro.module.css";
 
 export default function Intro({ text, image }) {
+
+  console.log("image", image)
   const illo = (
     <img
       alt={`Intro section Illustration of two men fighting near a portal`}
