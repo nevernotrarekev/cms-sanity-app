@@ -6,11 +6,23 @@ import { getAllPostsForHome, getPageData, getFeatured } from "../lib/api";
 import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 import Carousel from "../components/carousel";
+import { useEffect } from "react";
 
 export default function Index({ allPosts, allFeatured, homeData, preview }) {
   const posts = allPosts;
 
-  console.log("home data", homeData);
+  const getData = async () => {
+    try {
+      const data = await getPageData("/");
+
+      console.log("DATA FETCH FROM CLIENT", data);
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <>
       <Layout preview={preview}>
@@ -36,8 +48,6 @@ export async function getStaticProps({ preview = false }) {
   const allPosts = await getAllPostsForHome(preview);
   const allFeatured = await getFeatured(preview);
   const homeData = await getPageData("/");
-
-  console.log("HOMEDATA", homeData);
 
   return {
     props: {
