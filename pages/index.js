@@ -18,6 +18,7 @@ export default function Index({ allPosts, allFeatured, homeData, preview }) {
           <title>Studio for {CMS_NAME}</title>
         </Head>
         <Container>
+          <div>123</div>
           <Intro text={homeData.text} image={homeData.illo} />
           {posts.length > 0 && <Featured posts={posts} />}
         </Container>
