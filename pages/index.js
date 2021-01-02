@@ -34,16 +34,3 @@ Index.getInitialProps = async () => ({
   allPosts: await getAllPostsForHome(false),
   homeData: await getTestData(),
 });
-
-// export async function getStaticProps({ preview = false }) {
-//   const allPosts = await getAllPostsForHome(preview);
-//   const homeData = await getTestData();
-
-//   return {
-//     props: {
-//       allPosts,
-//       homeData,
-//       preview,
-//     },
-//   };
-// }
