@@ -31,6 +31,10 @@
   transform: translate(-50%, -50%);
   padding: 20px;
 
+  img {
+    max-height: 80vh;
+  }
+
   &.overlayVideo {
     width: 50%;
   }
@@ -42,4 +46,10 @@
     width: 100%;
   }
   height: auto;
+}
+
+.caption {
+  color: #f3f3f3;
+  text-align: center;
+  padding: 12px;
 }

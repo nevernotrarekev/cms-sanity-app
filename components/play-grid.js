@@ -14,6 +14,8 @@ const PlayGrid = ({ items }) => {
     setOverlayItem(index);
   };
 
+  console.log("ITEMS", items);
+
   const handleCloseUser = () => {
     setOpenUser(false);
   };
@@ -60,6 +62,8 @@ const PlayGrid = ({ items }) => {
                 />
               </div>
             )}
+
+            <div className={styles.caption}>{items[overlayItem].caption}</div>
           </div>
           <div
             className={styles.next}
@@ -84,7 +88,7 @@ const PlayGrid = ({ items }) => {
                   styles.playGridItem,
                   item.vimeoid ? "col-span-8" : "col-span-4"
                 )}
-                key={`play-item-${index}`}
+                key={`play-item-${item._key}`}
                 onClick={() => handleOpenUser(index)}
               >
                 {item.playImage && (
