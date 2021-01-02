@@ -23,7 +23,7 @@ const CovidBanner = () => {
     <div className={styles.wrapper}>
       <div className={styles.banner}>
         <h5>Hello world this is our covid banner copy</h5>
-        <a href="#">Learn More</a>
+        <a href="/covid">Learn More</a>
         <svg
           onClick={closeBanner}
           xmlns="http://www.w3.org/2000/svg"
