@@ -10,17 +10,17 @@
 }
 
 .banner {
-  padding: 16px;
-  background-color: #111;
+  padding: 16px 48px;
+  background-color: #141928;
   border-radius: 8px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   -webkit-box-shadow: 3px 3px 26px -9px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 3px 3px 26px -9px rgba(0, 0, 0, 0.75);
   box-shadow: 3px 3px 26px -9px rgba(0, 0, 0, 0.75);
   transition: 0.2s ease;
-  max-width: 720px;
+  max-width: 1200px;
   width: 100%;
   position: relative;
 }
@@ -29,6 +29,7 @@
   text-transform: uppercase;
   color: #f25b5d;
   margin-right: 48px;
+  font-size: 18px;
 }
 
 .banner a {
@@ -40,6 +41,7 @@
   padding: 4px 12px;
   min-width: 120px;
   text-align: center;
+  padding-bottom: 1px;
 }
 
 .banner svg {
@@ -52,6 +54,13 @@
 }
 
 @media (max-width: 768px) {
+
+  .banner {
+     flex-direction: column;
+     padding-left: 12px;
+     padding-right: 12px;
+  }
+
   .banner svg {
     position: absolute;
     left: 12px;
@@ -62,8 +71,10 @@
   }
 
   .banner h5 {
+    font-size: 16px;
+    text-align: center;
     padding-left: 32px;
     margin-right: 24px;
+    margin-bottom: 12px;
   }
-
 }
