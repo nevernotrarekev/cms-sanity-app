@@ -27,7 +27,7 @@ export default function Index({ playData, preview }) {
   );
 }
 
-export async function getStaticProps({ preview = false }) {
+export async function getServerSideProps({ preview = false }) {
   const playData = await getPlayData("/play");
   return {
     props: { playData, preview },

@@ -50,7 +50,7 @@ export default function Index({ aboutData, preview }) {
   );
 }
 
-export async function getStaticProps({ preview = false }) {
+export async function getServerSideProps({ preview = false }) {
   const aboutData = await getCovidPage("/about");
   return {
     props: { aboutData, preview },

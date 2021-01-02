@@ -44,7 +44,7 @@ export default function Post({ post, morePosts, preview }) {
                 >
                   {renderPrev()}
                 </div>
-                <div className={`col-span-10 ${markdownStyles['post-wrap']}`}>
+                <div className={`col-span-10 ${markdownStyles["post-wrap"]}`}>
                   <PostHeader
                     title={post.title}
                     brand={post.brand}
@@ -52,7 +52,7 @@ export default function Post({ post, morePosts, preview }) {
                     vimeoid={post.vimeoid}
                     type={post.type}
                   />
-                 
+
                   <div className={markdownStyles.about}>
                     <div>
                       <h4>About</h4>
@@ -89,7 +89,7 @@ export default function Post({ post, morePosts, preview }) {
   );
 }
 
-export async function getStaticProps({ params, preview = false }) {
+export async function getServerSideProps({ params, preview = false }) {
   const data = await getPostAndMorePosts(params.slug, preview);
   return {
     props: {

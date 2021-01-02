@@ -30,7 +30,11 @@ export default function Index({ allPosts, homeData, preview }) {
   );
 }
 
-Index.getInitialProps = async () => ({
-  allPosts: await getAllPostsForHome(false),
-  homeData: await getTestData(),
-});
+export async function getServerSideProps({ preview = false }) {
+  return {
+    props: {
+      allPosts: await getAllPostsForHome(false),
+      homeData: await getTestData(),
+    },
+  };
+}
