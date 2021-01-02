@@ -65,7 +65,8 @@ export default function Header() {
             <a
               className={cn(
                 classes.link,
-                router.pathname === "/work" ? styles.active : null
+                router.pathname === "/work" ? styles.active : null,
+                burgerOpen ? styles.menuLink : null
               )}
             >
               Work
@@ -75,7 +76,8 @@ export default function Header() {
             <a
               className={cn(
                 classes.link,
-                router.pathname === "/play" ? styles.active : null
+                router.pathname === "/play" ? styles.active : null,
+                burgerOpen ? styles.menuLink : null
               )}
             >
               Play
@@ -85,7 +87,8 @@ export default function Header() {
             <a
               className={cn(
                 classes.link,
-                router.pathname === "/about" ? styles.active : null
+                router.pathname === "/about" ? styles.active : null,
+                burgerOpen ? styles.menuLink : null
               )}
             >
               About

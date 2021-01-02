@@ -74,10 +74,14 @@
   font-weight: bold;
   letter-spacing: 0.065rem;
   display: inline;
+  transition: 0.2s ease;
+
+  border-bottom: 2px solid transparent;
 
   &:hover,
   &:active {
-    border-bottom: 2px solid;
+    border-bottom: 2px solid !important;
+    color: #f25b5d;
   }
 
   @media screen and (max-width: 768px) {
@@ -97,7 +101,7 @@
 
 .fixed-nav {
   position: sticky;
-  transform: translateY(-150px);
+  transform: translateY(-250px);
   top: 0;
   transition: 0.35s ease-in-out;
   z-index: 122;
@@ -117,4 +121,14 @@
 
 .fixed-nav img.open {
   display: none;
+}
+
+.menuLink {
+  transition: none;
+  border-bottom: 2px solid transparent;
+  margin-left: 0px !important;
+  &:hover {
+    border-color: transparent !important;
+    color: #fff;
+  }
 }
