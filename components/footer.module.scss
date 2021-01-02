@@ -78,6 +78,12 @@
     @media (max-width: 1022px) {
       position: relative;
     }
+
+    @media (max-width: 720px) {
+      img {
+        height: auto;
+      }
+    }
   }
 }
 

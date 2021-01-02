@@ -20,7 +20,7 @@ export default function Index({ allPosts, homeData, preview }) {
             <Featured posts={homeData.featuredWork} />
           )}
         </Container>
-        <div className="mt-12">
+        <div>
           <div className="carousel-space">
             <Carousel items={homeData.featuredReels} />
           </div>

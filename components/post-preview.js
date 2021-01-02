@@ -24,13 +24,15 @@ export default function PostPreview({
   return (
     <Link as={`/posts/${slug}`} href="/posts/[slug]">
       <a className={classes.link}>
-        <div className={`relative h-full bg-navy ${styles["video-container"]}`}>
+        <div className={`relative h-full ${styles["video-container"]}`}>
           {!vimeo ? (
             <CoverImage isLink index={index} slug={slug} image={coverImage} />
           ) : (
             <Vimeo video={vimeo} background autoplay loop />
           )}
-          <div className={styles.title}>
+          <div
+            className={`${styles.title}  transition duration-500 ease-in-out`}
+          >
             <h3 className="text-3xl leading-snug">
               <span className="font-bold">{title}</span> / {brand}
             </h3>

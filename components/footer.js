@@ -55,18 +55,5 @@ export default function Footer() {
         </div>
       </Container>
     </footer>
-
-    //       <div className={cn("col-start-8 col-span-4", styles.footerIllo)}>
-    //         <FooterIllo />
-    //       </div>
-    //       <div className={styles.attribute}>
-    //         <div>
-    //           Brothered With:
-    //           <TinyLion />
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </Container>
-    // </footer>
   );
 }

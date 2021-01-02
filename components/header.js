@@ -12,8 +12,6 @@ export default function Header() {
   const [burgerOpen, setBurgerOpen] = useState(false);
   const [showFixedNav, setShowFixedNav] = useState(false);
 
-  console.log("router", router);
-
   const classes = {
     links: `${styles.links} ${burgerOpen ? "open" : ""}`,
     link: `ml-12 ${styles.link}`,
@@ -37,14 +35,14 @@ export default function Header() {
       <nav
         className={` ${asFixed && styles["fixed-nav"]}  ${
           asFixed && showFixedNav && styles["show"]
-        } container max-w-wide mx-auto px-5 flex lg:flex-row justify-between items-center lg:mb-12 md:mb-6 mb-20 mt-8`}
+        } container max-w-wide mx-auto px-5 flex lg:flex-row justify-between items-center lg:mb-12 md:mb-6 mb-20 mt-8 navbar-main`}
       >
         <div className="w-168px">
           <Link href="/">
             <a className="hover:underline">
               {asFixed ? (
                 <img
-                  className={burgerOpen ? styles.open : null}
+                  className={`${burgerOpen ? styles.open : null} gif-nav`}
                   src={"/mondial.gif"}
                 />
               ) : (

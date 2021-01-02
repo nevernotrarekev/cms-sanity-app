@@ -25,6 +25,7 @@
     grid-column-gap: 0px;
     display: flex;
     align-items: center;
+    margin-bottom: 45px;
   }
 }
 

@@ -5,6 +5,8 @@ import PostTitle from "../components/post-title";
 import Vimeo from "@u-wave/react-vimeo";
 import styles from "./post-header.module.scss";
 
+import { imageBuilder } from "../lib/sanity";
+
 export default function PostHeader({
   title,
   brand,
@@ -15,7 +17,7 @@ export default function PostHeader({
   return (
     <div className={styles.header}>
       <div
-        className="flex  lg:flex-row justify-between items-end "
+        className="flex  lg:flex-row post-header-row items-end "
         style={{ marginBottom: "25px" }}
       >
         <PostTitle>
@@ -24,7 +26,18 @@ export default function PostHeader({
         <div className={styles.tag}>{type}</div>
       </div>
       <div className="mb-8 md:mb-16 sm:mx-0">
-        <Vimeo className="embed-responsive aspect-ratio-16/9" video={vimeoid} />
+        {!vimeoid ? (
+          <img
+            alt={`Cover Image for ${title}`}
+            src={imageBuilder.image(coverImage).url()}
+            style={{ width: "100%" }}
+          />
+        ) : (
+          <Vimeo
+            className="embed-responsive aspect-ratio-16/9"
+            video={vimeoid}
+          />
+        )}
       </div>
     </div>
   );

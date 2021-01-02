@@ -8,6 +8,7 @@
 .video-container {
   position: relative;
   height: 100%;
+  background-color: rgba(20, 25, 40, 1);
 
   iframe {
     width: 100%;
@@ -19,7 +20,7 @@
 .title {
   position: absolute;
   width: 100%;
-  padding: 16px;
+  padding: 30px;
   padding-top: 0px;
   display: flex;
   align-items: flex-end;
@@ -27,7 +28,17 @@
   bottom: 0;
   height: 100%;
 
-  
+  background-color: rgba(20, 25, 40, 0.2);
+
+  &:hover {
+    background-color: rgba(20, 25, 40, 0.5);
+  }
+}
+
+@media (max-width: 720px) {
+  .title {
+    padding: 16px;
+  }
 }
 
 .title h3 {

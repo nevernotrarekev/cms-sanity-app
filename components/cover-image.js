@@ -24,6 +24,7 @@ export default function CoverImage({ index, title, image, isLink }) {
       )}
     >
       {builtImage}
+      
     </div>
   );
 }

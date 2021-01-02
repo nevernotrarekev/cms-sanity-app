@@ -21,10 +21,10 @@ export default function ProjectsGrid({ posts }) {
 
   return (
     <section>
-      <div className="flex flex-col md:flex-row w-full py-12">
+      <div className="flex flex-col md:flex-row w-full">
         <h1>Our Work</h1>
-        <header className="ml-auto w-full flex">
-          <ul className="flex flex-row justify-end items-center">
+        <header className="ml-auto w-full flex start-col-mobile">
+          <ul className="flex flex-row justify-end items-center flex-col-mobile">
             {filters &&
               filters.map((filter) => {
                 return (
@@ -41,11 +41,11 @@ export default function ProjectsGrid({ posts }) {
           </ul>
         </header>
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap mt-8">
         {projects.map((post, index) => {
           return (
             <div key={post.slug} className={styles.columns}>
-              <Link as={`/posts/${post.slug}`} href="/posts/[slug]">
+              <Link as={`/posts/${post.slug.current}`} href="/posts/[slug]">
                 <a className={styles.link}>
                   <div className={`relative h-full bg-navy ${styles.item}`}>
                     <CoverImage
