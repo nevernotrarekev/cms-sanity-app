@@ -100,17 +100,19 @@
 }
 
 .fixed-nav {
-  position: sticky;
+  position: fixed;
   transform: translateY(-250px);
   top: 0;
   transition: 0.35s ease-in-out;
   z-index: 122;
   opacity: 0;
-  padding-top: 3rem;
+  padding-top: 2rem;
   margin-bottom: 0px;
 }
 
 .fixed-nav.show {
+  margin-top: 0px;
+  display: flex;
   transform: translateY(0);
   opacity: 1;
 }

@@ -3,8 +3,6 @@ import { imageBuilder } from "../lib/sanity";
 import styles from "./intro.module.css";
 
 export default function Intro({ text, image }) {
-
-  console.log("image", image)
   const illo = (
     <img
       alt={`Intro section Illustration of two men fighting near a portal`}
@@ -13,18 +11,19 @@ export default function Intro({ text, image }) {
   );
   // easily combine tailwind and css modules
   const classes = {
-    introtext: `col-span-8 md:col-span-8 mt-10 text-carnation ${styles.stylesH4}`,
+    introtext: `text-carnation ${styles.stylesH4}`,
   };
 
   return (
-    <section className="mx-auto max-w-wide">
-      <div
-        className={`grid gap-8 grid-cols-12 flex-row flex items-center md:justify-between mt-16 mb-16 ${styles.wrap}`}
-      >
-        <h4 className={classes.introtext}>{text}</h4>
-        <div className="col-span-4 md:col-span-3 mx-auto mt-12 md:mt-0">
-          {illo}
+    <section className={`mx-auto max-w-wide ${styles.container}`}>
+      <div className={styles.wrap}>
+        <div className={styles.textWrap}>
+          <h4 className={classes.introtext}>
+            A Creative Collective <span>Focused on Production,</span>{" "}
+            <span>Post-Production,</span> <span>and Design.</span>
+          </h4>
         </div>
+        <div className={styles.imgWrap}>{illo}</div>
       </div>
     </section>
   );
