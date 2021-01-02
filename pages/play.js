@@ -5,7 +5,7 @@ import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 import PlayGrid from "../components/play-grid";
 
-export default function Index({ allPlay, playData, preview }) {
+export default function Index({ playData, preview }) {
   console.log("play data", playData);
 
   return (
@@ -28,9 +28,8 @@ export default function Index({ allPlay, playData, preview }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const allPlay = await getAllPostsForPlay(preview);
   const playData = await getPlayData("/play");
   return {
-    props: { allPlay, playData, preview },
+    props: { playData, preview },
   };
 }
