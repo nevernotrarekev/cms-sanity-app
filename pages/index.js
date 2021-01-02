@@ -8,8 +8,6 @@ import { CMS_NAME } from "../lib/constants";
 import Carousel from "../components/carousel";
 
 export default function Index({ allPosts, homeData, preview }) {
-  const posts = allPosts;
-
   return (
     <>
       <Layout preview={preview}>
@@ -18,7 +16,9 @@ export default function Index({ allPosts, homeData, preview }) {
         </Head>
         <Container>
           <Intro text={homeData.text} image={homeData.illo} />
-          {posts.length > 0 && <Featured posts={posts} />}
+          {homeData.featuredWork.length > 0 && (
+            <Featured posts={homeData.featuredWork} />
+          )}
         </Container>
         <div className="mt-12">
           <div className="carousel-space">

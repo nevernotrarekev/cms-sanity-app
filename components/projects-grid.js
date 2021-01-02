@@ -19,6 +19,7 @@ export default function ProjectsGrid({ posts }) {
     }
   };
 
+
   return (
     <section>
       <div className="flex flex-col md:flex-row w-full py-12">

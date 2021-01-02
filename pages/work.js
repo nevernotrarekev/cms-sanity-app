@@ -6,7 +6,6 @@ import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 
 export default function Index({ allPosts, preview }) {
-  const posts = allPosts;
   return (
     <>
       <Layout preview={preview}>
@@ -14,9 +13,9 @@ export default function Index({ allPosts, preview }) {
           <title>Work Page {CMS_NAME}</title>
         </Head>
         <Container>
-          {posts.length > 0 && (
+          {allPosts.allWork.length > 0 && (
             <div className="mb-100">
-              <ProjectsGrid posts={posts.allWork} />
+              <ProjectsGrid posts={allPosts.allWork} />
             </div>
           )}
         </Container>
