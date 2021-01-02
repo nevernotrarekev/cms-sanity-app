@@ -76,7 +76,7 @@ export default function Post({ post, morePosts, preview }) {
                 </div>
 
                 <div
-                  className={`${markdownStyles["next-post-wrap"]} justify-self-end ml-5`}
+                  className={` flex justify-self-end ml-5 ${markdownStyles["next-post-wrap"]} ${markdownStyles["next-post-wrap--next"]} `}
                 >
                   {renderNext()}
                 </div>
@@ -89,7 +89,7 @@ export default function Post({ post, morePosts, preview }) {
   );
 }
 
-export async function getServerSideProps({ params, preview = false }) {
+export async function getStaticProps({ params, preview = false }) {
   const data = await getPostAndMorePosts(params.slug, preview);
   return {
     props: {

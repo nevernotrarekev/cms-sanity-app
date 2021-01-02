@@ -47,6 +47,16 @@
   grid-column: span 10 / span 10;
 }
 
+.next-post-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.next-post-wrap--next {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 720px) {
   .next-post-wrap {
     display: none;
@@ -55,8 +65,6 @@
   .next-post-wrap-mobile {
     display: flex;
     justify-content: space-between;
-    
-
   }
 
   .post-wrap {
