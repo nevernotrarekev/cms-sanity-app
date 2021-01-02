@@ -10,14 +10,14 @@ export default function Featured({ posts }) {
       <div className="flex flex-wrap">
         {posts.map((post, index) => {
           return (
-            <div key={post.slug} className={styles.gridItem}>
+            <div key={post._id} className={styles.gridItem}>
               <PostPreview
                 index={index}
                 title={post.title}
                 brand={post.brand}
                 coverImage={post.coverImage}
                 slug={post.slug}
-                vimeo={post.vimeoid}
+                vimeo={post.looping_vimeoid}
                 featured
               />
             </div>

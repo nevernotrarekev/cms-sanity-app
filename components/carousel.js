@@ -71,7 +71,7 @@ const Carousel = ({ items }) => {
       <div className={styles.carousel}>
         <Slider {...settings}>
           {items.map((item, i) => {
-            return <SingleVideoItem item={item} index={i} />;
+            return <SingleVideoItem key={i} item={item} index={i} />;
           })}
         </Slider>
       </div>
