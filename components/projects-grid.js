@@ -47,7 +47,7 @@ export default function ProjectsGrid({ posts }) {
             <div key={post.slug} className={styles.columns}>
               <Link as={`/posts/${post.slug?.current}`} href="/posts/[slug]">
                 <a className={styles.link}>
-                  <div className={`relative h-full bg-navy ${styles.item}`}>
+                  <div className={`relative ${styles.item}`}>
                     <CoverImage
                       isLink
                       index={index}
@@ -55,7 +55,9 @@ export default function ProjectsGrid({ posts }) {
                       image={post.coverImageWork}
                     />
 
-                    <div className={styles.title}>
+                    <div
+                      className={`${styles.title} bg-navy  transition duration-500 ease-in-out`}
+                    >
                       <h3 className="text-3xl leading-snug">
                         <span className="font-bold">{post.title}</span> /{" "}
                         {post.brand}

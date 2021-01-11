@@ -41,12 +41,12 @@
     opacity: 0;
   }
 
-  img {
-    margin-bottom: 12px;
+  svg {
+    margin-bottom: 18px;
   }
 
   @media (max-width: 720px) {
-    img {
+    svg {
       height: 24px;
       margin-bottom: 6px;
     }
@@ -63,14 +63,25 @@
     height: 100%;
     width: 100%;
     top: 0px;
+    background-color: rgba(20, 25, 40, 0.4);
+
+    &:hover {
+      background-color: rgba(20, 25, 40, 0.55);
+    }
+
+    &.is-play {
+      position: relative;
+    }
   }
+
+ 
 }
 
 .paginate {
   margin: 0 30px;
   text-decoration: none !important;
   display: block;
-
+  font-weight: 700;
   border-bottom: 3px solid transparent;
 
   &:hover {
