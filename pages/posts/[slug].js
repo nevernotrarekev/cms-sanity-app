@@ -97,10 +97,11 @@ export async function getStaticProps({ params, preview = false }) {
       post: data?.post || null,
       morePosts: data?.morePosts || null,
     },
+    revalidate: 1,
   };
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths(props) {
   const allPosts = await getAllPostsWithSlug();
   return {
     paths:
