@@ -15,12 +15,12 @@
 
   &:not(:first-child) {
     margin-top: 50px;
-    padding-top: 36%;
+    padding-top: 30%;
   }
 
   &:first-of-type {
     width: 100%;
-    padding-top: 36%;
+    padding-top: 33%;
 
     iframe {
       height: 157%;
@@ -38,8 +38,9 @@
   }
 
   &:nth-child(2n) {
-    width: calc(60% - 50px);
+    width: calc(58% - 50px);
     margin-right: 50px;
+
     @media screen and (max-width: 768px) {
       width: 100%;
       margin-right: 0;
@@ -48,8 +49,8 @@
   }
 
   &:nth-child(3n) {
-    width: 40%;
-    padding-top: 64%;
+    width: 42%;
+    padding-top: 49%;
 
     iframe {
       height: auto;
@@ -69,10 +70,10 @@
   }
 
   &:nth-child(4n) {
-    width: calc(40% - 50px);
+    width: calc(47% - 50px);
     margin-right: 50px;
-    padding-top: 64%;
-    margin-top: calc(-28% + 50px);
+    padding-top: 49%;
+    margin-top: calc(-19% + 50px);
 
     iframe {
       height: auto;
@@ -95,7 +96,7 @@
   }
 
   &:nth-child(5n) {
-    width: 60%;
+    width: 53%;
 
     @media screen and (max-width: 768px) {
       width: 100%;
@@ -123,7 +124,7 @@
   padding-top: 60px;
   padding-left: 4px;
   padding-right: 4px;
-  transition: .2s ease;
+  transition: 0.2s ease;
   font-size: 24px;
 }
 
