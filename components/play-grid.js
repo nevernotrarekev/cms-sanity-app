@@ -49,11 +49,14 @@ const PlayGrid = ({ items }) => {
               items && items[overlayItem].vimeoid && styles.overlayVideo
             )}
           >
-            {items && items[overlayItem].playImage && (
-              <img
-                src={imageBuilder.image(items[overlayItem].playImage).url()}
-              />
-            )}
+            {items &&
+              items[overlayItem].playImage &&
+              items &&
+              !items[overlayItem].vimeoid && (
+                <img
+                  src={imageBuilder.image(items[overlayItem].playImage).url()}
+                />
+              )}
             {items && items[overlayItem].vimeoid && (
               <div>
                 <Vimeo
@@ -92,16 +95,36 @@ const PlayGrid = ({ items }) => {
                 onClick={() => handleOpenUser(index)}
               >
                 {item.playImage && (
-                  <img src={imageBuilder.image(item.playImage).url()} />
+                  <div
+                    style={{
+                      position: "relative",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img src={imageBuilder.image(item.playImage).url()} />
+                    {item.vimeoid && (
+                      <img
+                        style={{
+                          position: "absolute",
+                          zIndex: 1,
+                          height: 60,
+                          width: 60,
+                        }}
+                        src="/play-icon.png"
+                      />
+                    )}
+                  </div>
                 )}
-                {item.vimeoid && (
+                {/* {item.vimeoid && (
                   <div>
                     <Vimeo
                       className="embed-responsive aspect-ratio-16/9"
                       video={item.vimeoid}
                     />
                   </div>
-                )}
+                )} */}
               </div>
             );
           })}
