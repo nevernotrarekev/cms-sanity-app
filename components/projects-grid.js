@@ -45,7 +45,7 @@ export default function ProjectsGrid({ posts }) {
         {projects.map((post, index) => {
           return (
             <div key={post.slug} className={styles.columns}>
-              <Link as={`/posts/${post.slug.current}`} href="/posts/[slug]">
+              <Link as={`/posts/${post.slug?.current}`} href="/posts/[slug]">
                 <a className={styles.link}>
                   <div className={`relative h-full bg-navy ${styles.item}`}>
                     <CoverImage
