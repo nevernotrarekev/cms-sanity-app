@@ -7,7 +7,7 @@ import { CMS_NAME } from "../lib/constants";
 
 export default function Index({ allPosts, preview }) {
   return (
-    <>
+    <div className="work-page">
       <Layout preview={preview}>
         <Head>
           <title>Work Page {CMS_NAME}</title>
@@ -20,7 +20,7 @@ export default function Index({ allPosts, preview }) {
           )}
         </Container>
       </Layout>
-    </>
+    </div>
   );
 }
 
