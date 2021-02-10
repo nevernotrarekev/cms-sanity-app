@@ -4,16 +4,24 @@
   padding-right: 65px;
 }
 
+@media (max-width: 600px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+
 .wrap {
   margin-top: 0px;
   display: flex;
-  margin-bottom: 90px;
+  margin-bottom: 50px;
 }
 
 .textWrap {
   display: flex;
   align-items: center;
-  width: 60%;
+  width: 78%;
 }
 
 .imgWrap {
@@ -37,9 +45,10 @@
 }
 
 .stylesH4 {
-  font-size: 58px;
-  line-height: 1.15;
+  font-size: 55px;
+  line-height: 1.1;
   font-weight: 500;
+  margin-left: 65px;
 }
 
 .stylesH4 span {
@@ -56,6 +65,7 @@
 @media only screen and (max-width: 767px) {
   .stylesH4 {
     font-size: 37px;
+    margin-left: 0px;
   }
 }
 

@@ -5,6 +5,7 @@ import styles from "./projects-grid.module.scss";
 
 export default function ProjectsGrid({ posts }) {
   const [projects, setProjects] = useState(posts);
+  const [activeFilter, setActiveFilter] = useState("all");
   const filters = [
     { name: "All", slug: "all" },
     { name: "Editorial", slug: "editorial" },
@@ -12,6 +13,8 @@ export default function ProjectsGrid({ posts }) {
     { name: "Color", slug: "color" },
   ];
   const handleFilter = (filter) => {
+    setActiveFilter(filter);
+
     if (filter === "all") {
       setProjects(posts);
     } else {
@@ -30,7 +33,10 @@ export default function ProjectsGrid({ posts }) {
                 return (
                   <li
                     key={filter.slug}
-                    className={`mx-3 ${styles.filter}`}
+                    className={`mx-3 ${styles.filter} ${
+                      activeFilter.toUpperCase() ===
+                        filter.name.toUpperCase() && styles["active-filter"]
+                    }`}
                     onClick={() => handleFilter(filter.slug)}
                     style={{ cursor: "pointer", letterSpacing: ".045rem" }}
                   >

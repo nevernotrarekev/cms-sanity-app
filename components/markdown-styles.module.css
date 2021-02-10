@@ -72,3 +72,29 @@
     grid-column: span 12 / span 12;
   }
 }
+
+.mb-48 {
+  margin-bottom: 48px;
+}
+
+.about-wrap {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+@media (max-width: 720px) {
+  .about-wrap-container {
+    flex-direction: column;
+    display: flex;
+    margin-top: 16px;
+  }
+
+  .about-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-wrap h4 {
+    margin-top: 12px;
+  }
+}

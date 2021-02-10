@@ -31,7 +31,7 @@ export default function Post({ post, morePosts, preview }) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-100">
+            <article>
               <Head>
                 <title>
                   {post.title} Work page {CMS_NAME}
@@ -53,22 +53,6 @@ export default function Post({ post, morePosts, preview }) {
                     type={post.type}
                   />
 
-                  <div className={markdownStyles.about}>
-                    <div>
-                      <h4>About</h4>
-                      <BlockContent
-                        blocks={post.content}
-                        className={markdownStyles.markdown}
-                      />
-                    </div>
-                    <div>
-                      <h4>Credits</h4>
-                      <BlockContent
-                        blocks={post.credits}
-                        className={markdownStyles.markdown}
-                      />
-                    </div>
-                  </div>
                   <div className={markdownStyles["next-post-wrap-mobile"]}>
                     {renderPrev()}
                     {renderNext()}
@@ -79,6 +63,44 @@ export default function Post({ post, morePosts, preview }) {
                   className={` flex justify-self-end ml-5 ${markdownStyles["next-post-wrap"]} ${markdownStyles["next-post-wrap--next"]} `}
                 >
                   {renderNext()}
+                </div>
+              </div>
+            </article>
+
+            <article>
+              <div
+                className={`flex items-center justify-center grid grid-cols-12 pt-8 py-8 ${markdownStyles["about-wrap-container"]} `}
+              >
+                <div
+                  className={`${markdownStyles["next-post-wrap"]} col-span-1 mr-5`}
+                >
+                  {/* {renderPrev()} */}
+                </div>
+                <div className={`col-span-10 ${markdownStyles["about-wrap"]}`}>
+                  <div>
+                    {post.content && (
+                      <>
+                        <h4>About</h4>
+                        <BlockContent
+                          blocks={post.content}
+                          className={markdownStyles.markdown}
+                        />
+                      </>
+                    )}
+                  </div>
+                  <div className={markdownStyles["mb-48"]}>
+                    <h4>Credits</h4>
+                    <BlockContent
+                      blocks={post.credits}
+                      className={markdownStyles.markdown}
+                    />
+                  </div>
+                </div>
+
+                <div
+                  className={` flex justify-self-end ml-5 ${markdownStyles["next-post-wrap"]} ${markdownStyles["next-post-wrap--next"]} `}
+                >
+                  {/* {renderNext()} */}
                 </div>
               </div>
             </article>
