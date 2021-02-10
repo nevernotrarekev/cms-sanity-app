@@ -105,11 +105,11 @@
   bottom: -35px !important;
 }
 
-@media (max-width: 720px) {
+/* @media (max-width: 720px) {
   .about-page .slick-dots {
     bottom: 35px !important;
   }
-}
+} */
 
 
 .about-page p {
