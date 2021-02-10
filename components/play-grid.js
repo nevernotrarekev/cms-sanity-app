@@ -15,8 +15,6 @@ const PlayGrid = ({ items }) => {
     setOverlayItem(index);
   };
 
-  console.log("ITEMS", items);
-
   const handleCloseUser = () => {
     setOpenUser(false);
   };
@@ -34,6 +32,7 @@ const PlayGrid = ({ items }) => {
         onClose={handleCloseUser}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
+        style={{backgroundColor: 'rgba(0,0,0,0.6)'}}
       >
         <>
           <div
@@ -104,6 +103,7 @@ const PlayGrid = ({ items }) => {
               >
                 {item.playImage && (
                   <div
+                    className={styles.bg}
                     style={{
                       position: "relative",
                       display: "flex",
