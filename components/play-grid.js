@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Vimeo from "@u-wave/react-vimeo";
+import YouTube from "@u-wave/react-youtube";
 import { imageBuilder } from "../lib/sanity";
 import styles from "./play-grid.module.scss";
 import cn from "classnames";
@@ -59,10 +60,17 @@ const PlayGrid = ({ items }) => {
               )}
             {items && items[overlayItem].vimeoid && (
               <div>
-                <Vimeo
-                  className="embed-responsive aspect-ratio-16/9"
-                  video={items[overlayItem].vimeoid}
-                />
+                {items[overlayItem].vimeoid.includes("vimeo") ? (
+                  <Vimeo
+                    className="embed-responsive aspect-ratio-16/9"
+                    video={items[overlayItem].vimeoid}
+                    autoplay
+                  />
+                ) : (
+                  <div className="embed-responsive aspect-ratio-16/9">
+                    <YouTube video={items[overlayItem].vimeoid} autoplay />
+                  </div>
+                )}
               </div>
             )}
 
