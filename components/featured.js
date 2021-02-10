@@ -6,10 +6,9 @@ import cn from "classnames";
 
 export default function Featured({ posts }) {
   return (
-    <section>
+    <section data-testid="featured-posts">
       <div className="flex flex-wrap">
         {posts.map((post, index) => {
-          console.log(post);
           return (
             <div key={post._id} className={styles.gridItem}>
               <PostPreview
