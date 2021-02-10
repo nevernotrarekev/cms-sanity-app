@@ -32,68 +32,70 @@ export default function Header() {
 
   const renderNav = ({ asFixed }) => {
     return (
-      <nav
-        className={` ${asFixed && styles["fixed-nav"]}  ${
-          asFixed && showFixedNav && styles["show"]
-        } container max-w-wide mx-auto px-5 flex lg:flex-row justify-between items-center lg:mb-12 md:mb-6 mb-20 mt-8 navbar-main`}
-      >
-        <div className="w-168px">
-          <Link href="/">
-            <a className="hover:underline">
-              {asFixed ? (
-                <img
-                  className={`${burgerOpen ? styles.open : null} gif-nav`}
-                  src={"/mondial.gif"}
-                />
-              ) : (
-                <LogoSvg />
-              )}
-            </a>
-          </Link>
-        </div>
-        <div
-          className={cn(styles.burgerWrap, burgerOpen ? styles.open : null)}
-          onClick={() => setBurgerOpen(!burgerOpen)}
+      <div data-aos={!asFixed && "fade-down"}>
+        <nav
+          className={` ${asFixed && styles["fixed-nav"]}  ${
+            asFixed && showFixedNav && styles["show"]
+          } container max-w-wide mx-auto px-5 flex lg:flex-row justify-between items-center lg:mb-12 md:mb-6 mb-20 mt-8 navbar-main `}
         >
-          <div></div>
-          <div></div>
-        </div>
-        <div className={cn(styles.links, burgerOpen ? styles.open : null)}>
-          <Link href={"/work"}>
-            <a
-              className={cn(
-                classes.link,
-                router.pathname === "/work" ? styles.active : null,
-                burgerOpen ? styles.menuLink : null
-              )}
-            >
-              Work
-            </a>
-          </Link>
-          <Link href={"/play"}>
-            <a
-              className={cn(
-                classes.link,
-                router.pathname === "/play" ? styles.active : null,
-                burgerOpen ? styles.menuLink : null
-              )}
-            >
-              Play
-            </a>
-          </Link>
-          <Link href={"/about"}>
-            <a
-              className={cn(
-                classes.link,
-                router.pathname === "/about" ? styles.active : null,
-                burgerOpen ? styles.menuLink : null
-              )}
-            >
-              About
-            </a>
-          </Link>
-        </div>
-      </nav>
+          <div className="w-168px">
+            <Link href="/">
+              <a className="hover:underline">
+                {asFixed ? (
+                  <img
+                    className={`${burgerOpen ? styles.open : null} gif-nav`}
+                    src={"/mondial.gif"}
+                  />
+                ) : (
+                  <LogoSvg />
+                )}
+              </a>
+            </Link>
+          </div>
+          <div
+            className={cn(styles.burgerWrap, burgerOpen ? styles.open : null)}
+            onClick={() => setBurgerOpen(!burgerOpen)}
+          >
+            <div></div>
+            <div></div>
+          </div>
+          <div className={cn(styles.links, burgerOpen ? styles.open : null)}>
+            <Link href={"/work"}>
+              <a
+                className={cn(
+                  classes.link,
+                  router.pathname === "/work" ? styles.active : null,
+                  burgerOpen ? styles.menuLink : null
+                )}
+              >
+                Work
+              </a>
+            </Link>
+            <Link href={"/play"}>
+              <a
+                className={cn(
+                  classes.link,
+                  router.pathname === "/play" ? styles.active : null,
+                  burgerOpen ? styles.menuLink : null
+                )}
+              >
+                Play
+              </a>
+            </Link>
+            <Link href={"/about"}>
+              <a
+                className={cn(
+                  classes.link,
+                  router.pathname === "/about" ? styles.active : null,
+                  burgerOpen ? styles.menuLink : null
+                )}
+              >
+                About
+              </a>
+            </Link>
+          </div>
+        </nav>
+      </div>
     );
   };
 
