@@ -12,6 +12,7 @@
     color: #12416c;
     font-family: "roc-grotesk";
     font-weight: 500;
+    -webkit-font-smoothing: antialiased;
   }
   svg {
     width: 100%;
@@ -122,13 +123,15 @@
 }
 
 .container {
-  max-width: 1400px;
-  padding-left: 30px;
-  padding-right: 30px;
+  max-width: 1440px;
+  padding-left: 65px;
+  padding-right: 65px;
 }
 
 .work-page .container {
-  max-width: 1680px;
+  max-width: 1440px;
+  padding-left: 65px;
+  padding-right: 65px;
 }
 
 .post-header-row {
@@ -172,4 +175,9 @@
   .post-header-row {
     justify-content: flex-start;
   }
+}
+
+.navbar-main {
+  padding-left: 50px !important;
+  padding-right: 50px !important;
 }
