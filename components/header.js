@@ -32,7 +32,7 @@ export default function Header() {
 
   const renderNav = ({ asFixed }) => {
     return (
-      <div data-aos={!asFixed && "fade-down"}>
+      <div>
         <nav
           className={` ${asFixed && styles["fixed-nav"]}  ${
             asFixed && showFixedNav && styles["show"]
@@ -40,7 +40,7 @@ export default function Header() {
         >
           <div className="w-168px">
             <Link href="/">
-              <a className="hover:underline">
+              <a className="hover:underline" data-aos={!asFixed && "fade-down"}>
                 {asFixed ? (
                   <img
                     className={`${burgerOpen ? styles.open : null} gif-nav`}
