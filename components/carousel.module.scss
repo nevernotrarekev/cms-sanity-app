@@ -21,6 +21,10 @@
         opacity: 0.1;
       }
     }
+
+    @media (max-width: 720px) {
+      width: 75vw !important;
+    }
   }
 }
 
@@ -73,8 +77,6 @@
       position: relative;
     }
   }
-
- 
 }
 
 .paginate {

@@ -9,6 +9,8 @@
   @media (max-width: 1022px) {
     display: flex;
     flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
@@ -32,6 +34,11 @@
 
   .top {
     margin-bottom: 48px;
+
+    @media (max-width: 720px) {
+      margin-bottom: 24px;
+    }
+
   }
 
   .bottom {

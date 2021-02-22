@@ -7,7 +7,7 @@ export default function Layout({ preview, children }) {
     <>
       <Meta />
       <Header />
-      <div className="min-h-screen" data-aos="fade-in" >
+      <div className="min-h-screen" data-aos="fade-in" data-aos-duration="600" >
         <main>{children}</main>
       </div>
       <Footer />

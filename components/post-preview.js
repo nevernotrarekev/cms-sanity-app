@@ -34,7 +34,7 @@ const PostPreviewItem = ({ video, slug, coverImage, title, brand }) => {
       )}
       <div className={`${styles.title}  transition duration-500 ease-in-out`}>
         <h3 className="text-3xl leading-snug">
-          <span className="font-bold">{title}</span> / {brand}
+          <span className="font-bold">{brand}</span> / {title}
         </h3>
       </div>
     </div>

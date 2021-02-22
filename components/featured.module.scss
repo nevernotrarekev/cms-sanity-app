@@ -38,8 +38,8 @@
   }
 
   &:nth-child(2n) {
-    width: calc(58% - 50px);
-    margin-right: 50px;
+    width: calc(58% - 30px);
+    margin-right: 30px;
 
     @media screen and (max-width: 768px) {
       width: 100%;
@@ -70,10 +70,10 @@
   }
 
   &:nth-child(4n) {
-    width: calc(47% - 50px);
-    margin-right: 50px;
+    width: calc(47% - 30px);
+    margin-right: 30px;
     padding-top: 49%;
-    margin-top: calc(-19% + 50px);
+    margin-top: calc(-19% + 30px);
 
     iframe {
       height: auto;

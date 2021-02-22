@@ -18,7 +18,7 @@ export default function ProjectsGrid({ posts }) {
     if (filter === "all") {
       setProjects(posts);
     } else {
-      setProjects(posts.filter((post) => post.type === filter));
+      setProjects(posts.filter((post) => post.type.includes(filter)));
     }
   };
 
@@ -50,7 +50,7 @@ export default function ProjectsGrid({ posts }) {
       <div className="flex flex-wrap mt-8">
         {projects.map((post, index) => {
           return (
-            <div key={post.slug} className={styles.columns}>
+            <div key={post.title} className={styles.columns}>
               <Link as={`/posts/${post.slug?.current}`} href="/posts/[slug]">
                 <a className={styles.link}>
                   <div className={`relative ${styles.item}`}>

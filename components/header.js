@@ -40,7 +40,11 @@ export default function Header() {
         >
           <div className="w-168px">
             <Link href="/">
-              <a className="hover:underline" data-aos={!asFixed && "fade-down"}>
+              <a
+                className="hover:underline"
+                data-aos={!asFixed && "fade-down"}
+                data-aos-duration="600"
+              >
                 {asFixed ? (
                   <img
                     className={`${burgerOpen ? styles.open : null} gif-nav`}
