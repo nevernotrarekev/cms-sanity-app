@@ -65,8 +65,8 @@ export default function ProjectsGrid({ posts }) {
                       className={`${styles.title} transition duration-500 ease-in-out`}
                     >
                       <h3 className="text-3xl leading-snug">
-                        <span className="font-bold">{post.title}</span> /{" "}
-                        {post.brand}
+                        <span className="font-bold">{post.brand}</span> /{" "}
+                        {post.title}
                       </h3>
                     </div>
                   </div>
