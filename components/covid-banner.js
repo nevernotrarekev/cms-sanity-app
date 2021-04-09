@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./covid-banner.module.css";
 
-const CovidBanner = () => {
+const CovidBanner = ({ bannerText }) => {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
@@ -22,7 +22,9 @@ const CovidBanner = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.banner}>
-        <h5>Lorem ipsum dolar set amit consectetur epicus set a delorus aquiset ipsum.</h5>
+        <h5>
+          {bannerText}
+        </h5>
         <a href="/covid">Learn More</a>
         <svg
           onClick={closeBanner}

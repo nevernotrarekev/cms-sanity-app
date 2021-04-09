@@ -19,8 +19,7 @@ export default function Intro({ text, image }) {
       <div className={styles.wrap}>
         <div className={styles.textWrap}>
           <h4 className={classes.introtext}>
-            A Creative Collective Focused on Production, Post-Production and
-            Design.
+            {text}
           </h4>
         </div>
       </div>

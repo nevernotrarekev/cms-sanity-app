@@ -10,7 +10,7 @@ import Slider from "react-slick";
 import { imageBuilder } from "../lib/sanity";
 
 export default function Index({ aboutData, homeData }) {
-  console.log("HOME DATE", homeData);
+ 
   return (
     <>
       <Layout preview={false}>
@@ -34,7 +34,7 @@ export default function Index({ aboutData, homeData }) {
                 <img
                   style={{ margin: "auto" }}
                   alt={`Intro section Illustration of two men fighting near a portal`}
-                  src={imageBuilder.image(homeData.illo).height(402).url()}
+                  src={imageBuilder.image(aboutData.illo).height(402).url()}
                 />
               </div>
             </div>
