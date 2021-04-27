@@ -120,6 +120,7 @@ const PlayGrid = ({ items }) => {
                           height: 60,
                           width: 60,
                         }}
+                        className={styles.playIcon}
                         src="/play-icon.png"
                       />
                     )}
