@@ -24,6 +24,12 @@
   cursor: pointer;
 }
 
+@media (max-width: 600px) {
+  .next, .previous {
+    display: none;
+  }
+}
+
 .overlay {
   top: 50%;
   left: 50%;
@@ -37,6 +43,10 @@
 
   &.overlayVideo {
     width: 50%;
+
+    @media (max-width: 600px) {
+      width: 100%;
+    }
   }
 }
 
