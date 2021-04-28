@@ -23,7 +23,7 @@ export default function PostHeader({
         <PostTitle>
           <b>{brand}</b> / {title}
         </PostTitle>
-        <div className={styles.tag}>{type}</div>
+        <div className={styles.tag}>{type && type.length && type.join(" / ") || type}</div>
       </div>
       <div className="mb-8 md:mb-16 sm:mx-0">
         {!vimeoid ? (
