@@ -111,7 +111,7 @@ const PlayGrid = ({ items }) => {
                       justifyContent: "center",
                     }}
                   >
-                    <img src={imageBuilder.image(item.playImage).format('jpg').url()} />
+                    <img src={imageBuilder.image(item.playImage).url()} />
                     {item.vimeoid && (
                       <img
                         style={{
