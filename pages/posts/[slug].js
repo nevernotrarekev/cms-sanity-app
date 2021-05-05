@@ -36,27 +36,7 @@ export default function Post({ post, morePosts, preview }) {
                 <title>
                   {post.title} Work page {CMS_NAME}
                 </title>
-
-                <meta name="description" content="A Creative Collective Focused on Production, Post-Production, and Design">
-
-                <!-- Facebook Meta Tags -->
-                <meta property="og:url" content="https://mndl.com">
-                <meta property="og:type" content="website">
-                <meta property="og:title" content="Mondial | Creative Collective ">
-                <meta property="og:description" content="A Creative Collective Focused on Production, Post-Production, and Design">
-                <meta property="og:image" content="https://mondial.vercel.app/footer-illo.png">
-
-                <!-- Twitter Meta Tags -->
-                <meta name="twitter:card" content="summary_large_image">
-                <meta property="twitter:domain" content="mndl.com">
-                <meta property="twitter:url" content="https://mndl.com">
-                <meta name="twitter:title" content="Mondial | Creative Collective ">
-                <meta name="twitter:description" content="A Creative Collective Focused on Production, Post-Production, and Design">
-                <meta name="twitter:image" content="https://mondial.vercel.app/footer-illo.png">
-
-                <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-                </meta>
-
+                {/* <meta property="og:image" content={post.ogImage.url} /> */}
               </Head>
               <div className="flex items-center justify-center grid grid-cols-12 pt-8 py-8">
                 <div
