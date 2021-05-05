@@ -10,7 +10,7 @@ export default function Index({ allPosts, preview }) {
     <div className="work-page">
       <Layout preview={preview}>
         <Head>
-          <title>Work Page {CMS_NAME}</title>
+        <title>{CMS_NAME} | Creative Collective | Work</title>
         </Head>
         <Container>
           {allPosts.allWork.length > 0 && (

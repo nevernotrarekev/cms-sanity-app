@@ -15,7 +15,7 @@ export default function Index({ aboutData, preview }) {
     <>
       <Layout preview={preview}>
         <Head>
-          <title>COVID-19 {CMS_NAME}</title>
+        <title>{CMS_NAME} | Creative Collective | COVID-19</title>
         </Head>
         <Container>
           <div className="mb-100">

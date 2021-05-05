@@ -15,7 +15,7 @@ export default function Index({ aboutData, homeData }) {
     <>
       <Layout preview={false}>
         <Head>
-          <title>About page {CMS_NAME}</title>
+          <title>{CMS_NAME} | Creative Collective | About</title>
         </Head>
         <Container>
           <div className="mb-100">

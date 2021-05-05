@@ -12,7 +12,7 @@ export default function Index({ allPosts, homeData, preview }) {
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Studio for {CMS_NAME}</title>
+        <title>{CMS_NAME} | Creative Collective </title>
         </Head>
         <Container>
           <Intro text={homeData.text} image={homeData.illo} />
