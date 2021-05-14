@@ -14,7 +14,7 @@ import PrevNext from "../../components/prev-next";
 import markdownStyles from "../../components/markdown-styles.module.css";
 import BlockContent from "@sanity/block-content-to-react";
 
-import { imageBuilder } from "../lib/sanity";
+import { imageBuilder } from "../../lib/sanity"
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();

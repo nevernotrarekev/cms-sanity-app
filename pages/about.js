@@ -7,7 +7,7 @@ import markdownStyles from "../components/markdown-styles.module.css";
 import BlockContent from "@sanity/block-content-to-react";
 import Slider from "react-slick";
 
-import { imageBuilder } from "../lib/sanity";
+import { imageBuilder } from "../lib/sanity"
 
 export default function Index({ aboutData, homeData }) {
   return (
