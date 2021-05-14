@@ -14,7 +14,7 @@ import PrevNext from "../../components/prev-next";
 import markdownStyles from "../../components/markdown-styles.module.css";
 import BlockContent from "@sanity/block-content-to-react";
 
-import { imageBuilder } from "../../lib/sanity"
+import { imageBuilder } from "../../lib/sanity";
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
@@ -41,14 +41,11 @@ export default function Post({ post, morePosts, preview }) {
                 <meta
                   property="og:image"
                   content={imageBuilder.image(post.coverImage).url()}
-                  key="image"
-
                 />
 
                 <meta
                   name="description"
                   content="A Creative Collective Focused on Production, Post-Production, and Design"
-                
                 />
               </Head>
               <div className="flex items-center justify-center grid grid-cols-12 pt-8 py-8">

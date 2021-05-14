@@ -22,10 +22,7 @@ export default function Index({ playData, preview }) {
             content={
               "https://user-images.githubusercontent.com/972100/118293617-d28e2080-b4a7-11eb-93ad-631d8019cd80.jpg"
             }
-            key="image"
-
           />
-
         </Head>
         <Container>
           <div className="mb-100">
