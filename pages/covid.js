@@ -15,7 +15,8 @@ export default function Index({ aboutData, preview }) {
     <>
       <Layout preview={preview}>
         <Head>
-          <title>COVID-19 {CMS_NAME}</title>
+          <title>{CMS_NAME} | Creative Collective | COVID-19</title>
+
           <meta
             name="description"
             content="A Creative Collective Focused on Production, Post-Production, and Design"

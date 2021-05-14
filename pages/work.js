@@ -10,7 +10,8 @@ export default function Index({ allPosts, preview }) {
     <div className="work-page">
       <Layout preview={preview}>
         <Head>
-          <title>Work Page {CMS_NAME}</title>
+          <title>{CMS_NAME} | Creative Collective | Work</title>
+
           <meta
             name="description"
             content="A Creative Collective Focused on Production, Post-Production, and Design"

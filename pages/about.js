@@ -14,7 +14,7 @@ export default function Index({ aboutData, homeData }) {
     <>
       <Layout preview={false}>
         <Head>
-          <title>About page {CMS_NAME}</title>
+          <title>{CMS_NAME} | Creative Collective | About</title>
           <meta
             name="description"
             content="A Creative Collective Focused on Production, Post-Production, and Design"
