@@ -41,11 +41,14 @@ export default function Post({ post, morePosts, preview }) {
                 <meta
                   property="og:image"
                   content={imageBuilder.image(post.coverImage).url()}
+                  key="image"
+
                 />
 
                 <meta
                   name="description"
                   content="A Creative Collective Focused on Production, Post-Production, and Design"
+                
                 />
               </Head>
               <div className="flex items-center justify-center grid grid-cols-12 pt-8 py-8">
