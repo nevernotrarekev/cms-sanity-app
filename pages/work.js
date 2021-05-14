@@ -11,6 +11,16 @@ export default function Index({ allPosts, preview }) {
       <Layout preview={preview}>
         <Head>
           <title>Work Page {CMS_NAME}</title>
+          <meta
+            name="description"
+            content="A Creative Collective Focused on Production, Post-Production, and Design"
+          />
+          <meta
+            property="og:image"
+            content={
+              "https://user-images.githubusercontent.com/972100/118293617-d28e2080-b4a7-11eb-93ad-631d8019cd80.jpg"
+            }
+          />
         </Head>
         <Container>
           {allPosts.allWork.length > 0 && (
@@ -27,6 +37,6 @@ export default function Index({ allPosts, preview }) {
 export async function getServerSideProps({ preview = false }) {
   const allPosts = await getWorkData(preview);
   return {
-    props: { allPosts, preview },
+    props: { allPosts, preview }
   };
 }

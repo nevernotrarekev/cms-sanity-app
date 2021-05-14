@@ -13,6 +13,16 @@ export default function Index({ allPosts, homeData, preview }) {
       <Layout preview={preview}>
         <Head>
           <title>Studio for {CMS_NAME}</title>
+          <meta
+            name="description"
+            content="A Creative Collective Focused on Production, Post-Production, and Design"
+          />
+          <meta
+            property="og:image"
+            content={
+              "https://user-images.githubusercontent.com/972100/118293617-d28e2080-b4a7-11eb-93ad-631d8019cd80.jpg"
+            }
+          />
         </Head>
         <Container>
           <Intro text={homeData.text} image={homeData.illo} />
@@ -34,7 +44,7 @@ export async function getServerSideProps({ preview = false }) {
   return {
     props: {
       allPosts: await getAllPostsForHome(false),
-      homeData: await getTestData(),
-    },
+      homeData: await getTestData()
+    }
   };
 }

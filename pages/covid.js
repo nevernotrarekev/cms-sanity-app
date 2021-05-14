@@ -16,6 +16,16 @@ export default function Index({ aboutData, preview }) {
       <Layout preview={preview}>
         <Head>
           <title>COVID-19 {CMS_NAME}</title>
+          <meta
+            name="description"
+            content="A Creative Collective Focused on Production, Post-Production, and Design"
+          />
+          <meta
+            property="og:image"
+            content={
+              "https://user-images.githubusercontent.com/972100/118293617-d28e2080-b4a7-11eb-93ad-631d8019cd80.jpg"
+            }
+          />
         </Head>
         <Container>
           <div className="mb-100">
@@ -31,7 +41,7 @@ export default function Index({ aboutData, preview }) {
               </div>
               <div className="col-span-10 md:col-span-5 self-center about-page">
                 <Slider arrows={false} slidesToShow={1} dots={true} drag={true}>
-                  {aboutData.imageGallery.map((image) => (
+                  {aboutData.imageGallery.map(image => (
                     <img
                       src={imageBuilder
                         .image(image)
@@ -53,6 +63,6 @@ export default function Index({ aboutData, preview }) {
 export async function getServerSideProps({ preview = false }) {
   const aboutData = await getCovidPage("/about");
   return {
-    props: { aboutData, preview },
+    props: { aboutData, preview }
   };
 }

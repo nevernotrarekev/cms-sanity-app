@@ -14,6 +14,8 @@ import PrevNext from "../../components/prev-next";
 import markdownStyles from "../../components/markdown-styles.module.css";
 import BlockContent from "@sanity/block-content-to-react";
 
+import { imageBuilder } from "../lib/sanity";
+
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
@@ -36,7 +38,15 @@ export default function Post({ post, morePosts, preview }) {
                 <title>
                   {post.title} Work page {CMS_NAME}
                 </title>
-                {/* <meta property="og:image" content={post.ogImage.url} /> */}
+                <meta
+                  property="og:image"
+                  content={imageBuilder.image(post.coverImage).url()}
+                />
+
+                <meta
+                  name="description"
+                  content="A Creative Collective Focused on Production, Post-Production, and Design"
+                />
               </Head>
               <div className="flex items-center justify-center grid grid-cols-12 pt-8 py-8">
                 <div
@@ -117,9 +127,9 @@ export async function getStaticProps({ params, preview = false }) {
     props: {
       preview,
       post: data?.post || null,
-      morePosts: data?.morePosts || null,
+      morePosts: data?.morePosts || null
     },
-    revalidate: 1,
+    revalidate: 1
   };
 }
 
@@ -127,11 +137,11 @@ export async function getStaticPaths(props) {
   const allPosts = await getAllPostsWithSlug();
   return {
     paths:
-      allPosts?.map((post) => ({
+      allPosts?.map(post => ({
         params: {
-          slug: post.slug,
-        },
+          slug: post.slug
+        }
       })) || [],
-    fallback: true,
+    fallback: true
   };
 }

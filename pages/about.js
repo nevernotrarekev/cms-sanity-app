@@ -10,12 +10,21 @@ import Slider from "react-slick";
 import { imageBuilder } from "../lib/sanity";
 
 export default function Index({ aboutData, homeData }) {
- 
   return (
     <>
       <Layout preview={false}>
         <Head>
           <title>About page {CMS_NAME}</title>
+          <meta
+            name="description"
+            content="A Creative Collective Focused on Production, Post-Production, and Design"
+          />
+          <meta
+            property="og:image"
+            content={
+              "https://user-images.githubusercontent.com/972100/118293617-d28e2080-b4a7-11eb-93ad-631d8019cd80.jpg"
+            }
+          />
         </Head>
         <Container>
           <div className="mb-100">
@@ -41,7 +50,7 @@ export default function Index({ aboutData, homeData }) {
             <div className="grid grid-cols-10 gap-8 mt-12 md:mt-12">
               <div className="col-span-10 md:col-span-5 self-center about-page">
                 <Slider arrows={false} slidesToShow={1} dots={true} drag={true}>
-                  {aboutData.imageGallery.map((image) => (
+                  {aboutData.imageGallery.map(image => (
                     <img
                       src={imageBuilder
                         .image(image)
@@ -97,6 +106,6 @@ export async function getServerSideProps({ preview = false }) {
   const aboutData = await getAboutData("/about");
   const homeData = await getTestData();
   return {
-    props: { aboutData, preview, homeData },
+    props: { aboutData, preview, homeData }
   };
 }
