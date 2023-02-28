@@ -7,7 +7,7 @@
     "start": "next start"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": "18.14.2"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
