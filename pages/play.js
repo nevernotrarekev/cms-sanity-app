@@ -6,8 +6,6 @@ import { CMS_NAME } from "../lib/constants";
 import PlayGrid from "../components/play-grid";
 
 export default function Index({ playData, preview }) {
-  console.log("play data", playData);
-
   return (
     <>
       <Layout preview={preview}>
@@ -40,6 +38,6 @@ export default function Index({ playData, preview }) {
 export async function getServerSideProps({ preview = false }) {
   const playData = await getPlayData("/play");
   return {
-    props: { playData, preview }
+    props: { playData, preview },
   };
 }

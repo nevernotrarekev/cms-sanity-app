@@ -4,7 +4,7 @@ import styles from "./prev-next.module.scss";
 
 export default function PrevNext({ slug, text }) {
   return (
-    <Link as={`/posts/${slug}`} href="/posts/[slug]">
+    <Link legacyBehavior as={`/posts/${slug}`} href="/posts/[slug]">
       <a className={styles.link}>
         <div className={styles.linkInnerWrap}>
           <div className={cn("text-carnation", styles.linkText)}>{text}</div>

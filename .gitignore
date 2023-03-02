@@ -15,6 +15,8 @@
 /mondial/node_modules
 /mondial
 
+/mondial-cms/node_modules
+
 # production
 /build
 

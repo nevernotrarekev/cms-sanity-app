@@ -25,7 +25,7 @@ export default function Featured({ posts }) {
         })}
       </div>
       <div className="pb-12 text-center">
-        <Link href="/work">
+        <Link legacyBehavior href="/work">
           <a className={styles.link}>
             <div className={styles.linkInnerWrap}>
               <div className={cn("text-carnation", styles.linkText)}>

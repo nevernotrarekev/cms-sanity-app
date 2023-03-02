@@ -3,7 +3,7 @@ import CoverImage from "./cover-image";
 import Link from "next/link";
 import styles from "./projects-grid.module.scss";
 
-export default function ProjectsGrid({ posts }) {
+export default function ProjectsGrid({ name, posts }) {
   const [projects, setProjects] = useState(posts);
   const [activeFilter, setActiveFilter] = useState("all");
   const filters = [
@@ -22,10 +22,12 @@ export default function ProjectsGrid({ posts }) {
     }
   };
 
+  console.log(posts)
+
   return (
     <section>
       <div className="flex flex-col md:flex-row w-full">
-        <h1>Our Work</h1>
+        <h1>{name || 'Our Work'}</h1>
         <header className="ml-auto w-full flex start-col-mobile">
           <ul className="flex flex-row justify-end items-center flex-col-mobile">
             {filters &&
@@ -51,7 +53,7 @@ export default function ProjectsGrid({ posts }) {
         {projects.map((post, index) => {
           return (
             <div key={post.title} className={styles.columns}>
-              <Link as={`/posts/${post.slug?.current}`} href="/posts/[slug]">
+              <Link legacyBehavior as={`/posts/${post.slug?.current}`} href="/posts/[slug]">
                 <a className={styles.link}>
                   <div className={`relative ${styles.item}`}>
                     <CoverImage
