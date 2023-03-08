@@ -6,12 +6,11 @@ import Head from "next/head";
 import { CMS_NAME } from "../../lib/constants";
 
 export default function Index({ allTalent, preview }) {
-  console.log("all talent", allTalent);
   return (
     <div className="work-page">
       <Layout preview={preview}>
         <Head>
-          <title>{CMS_NAME} | Creative Collective | Work</title>
+          <title>{CMS_NAME} | Creative Collective | Talent</title>
 
           <meta
             name="description"
