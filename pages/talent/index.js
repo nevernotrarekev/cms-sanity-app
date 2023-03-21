@@ -24,6 +24,7 @@ export default function Index({ allTalent, preview }) {
           />
         </Head>
         <Container>
+        
           <TalentGrid talent={allTalent} />
         </Container>
       </Layout>
