@@ -30,6 +30,9 @@ export default function Index({ data }) {
               <ProjectsGrid
                 name={data[0].talentName}
                 posts={data[0].projects}
+                subtitleOne={data[0].talentTitle}
+                subtitleTwo={data[0].talentDescription}
+
               />{" "}
             </div>
           ) : (
