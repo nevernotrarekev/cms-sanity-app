@@ -1,7 +1,7 @@
 .container {
   display: grid;
-  grid-template-columns: 300px auto;
-  grid-column-gap: 120px;
+  grid-template-columns: 740px auto;
+  grid-column-gap: 60px;
   grid-row-gap: 48px;
 }
 
@@ -9,7 +9,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 24px;
-  grid-row-gap: 24px;
+  grid-row-gap: 84px;
   margin-top: 48px;
   margin-bottom: 24px;
 }
@@ -46,6 +46,7 @@
   .container {
     display: grid;
     grid-template-columns: 1fr;
+    padding-bottom: 64px;
   }
 
   .talent-grid {
@@ -54,5 +55,9 @@
     grid-column-gap: 24px;
     grid-row-gap: 24px;
     margin-top: 24px;
+  }
+
+  .illo {
+    display: none;
   }
 }

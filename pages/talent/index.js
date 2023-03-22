@@ -8,7 +8,7 @@ import { CMS_NAME } from "../../lib/constants";
 export default function Index({ allTalent, settings, preview }) {
   return (
     <div className="work-page">
-      <Layout preview={preview} fullHeight={false}>
+      <Layout preview={preview} >
         <Head>
           <title>{CMS_NAME} | Creative Collective | Talent</title>
 

@@ -29,13 +29,6 @@ export default function TalentGrid({ talent, settings }) {
         {pageSubtitle}
       </h2>
       <div className={styles["container"]}>
-        <div>
-          <img
-            style={{ margin: "auto", paddingTop: "48px" }}
-            alt={`Intro section Illustration of two men fighting near a portal`}
-            src={imageBuilder.image(image).height(300).url()}
-          />
-        </div>
         <div className={styles["talent-grid"]}>
           {talent.map((t) => (
             <div className={styles["talent-card"]}>
@@ -46,6 +39,13 @@ export default function TalentGrid({ talent, settings }) {
               </Link>
             </div>
           ))}
+        </div>
+        <div className={styles.illo}>
+          <img
+            style={{ margin: "auto", paddingTop: "48px" }}
+            alt={`Intro section Illustration of two men fighting near a portal`}
+            src={imageBuilder.image(image).height(300).url()}
+          />
         </div>
       </div>
     </div>
