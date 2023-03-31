@@ -59,7 +59,7 @@ export default function PostPreview({
   };
 
   return (
-    <Link as={`/posts/${slug}`} href="/posts/[slug]">
+    <Link legacyBehavior as={`/posts/${slug}`} href="/posts/[slug]">
       <a className={classes.link}>
         <PostPreviewItem
           video={vimeo}

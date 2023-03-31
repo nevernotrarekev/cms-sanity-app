@@ -39,7 +39,7 @@ export default function Header() {
           } container max-w-wide mx-auto px-5 flex lg:flex-row justify-between items-center lg:mb-12 md:mb-6 mb-20 mt-8 navbar-main `}
         >
           <div className="w-168px">
-            <Link href="/">
+            <Link legacyBehavior href="/">
               <a
                 className="hover:underline"
                 data-aos={!asFixed && "fade-down"}
@@ -64,7 +64,7 @@ export default function Header() {
             <div></div>
           </div>
           <div className={cn(styles.links, burgerOpen ? styles.open : null)}>
-            <Link href={"/work"}>
+            <Link legacyBehavior href={"/work"}>
               <a
                 className={cn(
                   classes.link,
@@ -75,7 +75,18 @@ export default function Header() {
                 Work
               </a>
             </Link>
-            <Link href={"/play"}>
+            <Link legacyBehavior href={"/talent"}>
+              <a
+                className={cn(
+                  classes.link,
+                  router.pathname === "/talent" ? styles.active : null,
+                  burgerOpen ? styles.menuLink : null
+                )}
+              >
+                Talent
+              </a>
+            </Link>
+            <Link legacyBehavior href={"/play"}>
               <a
                 className={cn(
                   classes.link,
@@ -86,7 +97,7 @@ export default function Header() {
                 Play
               </a>
             </Link>
-            <Link href={"/about"}>
+            <Link legacyBehavior href={"/about"}>
               <a
                 className={cn(
                   classes.link,
