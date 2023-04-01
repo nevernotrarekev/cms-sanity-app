@@ -32,33 +32,35 @@ export default function ProjectsGrid({
   return (
     <section>
       <div className="flex flex-col md:flex-row w-full">
-        <h1>{name || "Our Work"}</h1>
-        <header className="ml-auto w-full flex start-col-mobile">
-          <ul className="flex flex-row justify-end items-center flex-col-mobile">
-            {filters &&
-              filters.map((filter) => {
-                return (
-                  <li
-                    key={filter.slug}
-                    className={`mx-3 ${styles.filter} ${
-                      activeFilter.toUpperCase() ===
-                        filter.name.toUpperCase() && styles["active-filter"]
-                    }`}
-                    onClick={() => handleFilter(filter.slug)}
-                    style={{ cursor: "pointer", letterSpacing: ".045rem" }}
-                  >
-                    {filter.name}
-                  </li>
-                );
-              })}
-          </ul>
-        </header>
-      </div>
-
-      
-      <div>
-        <h2 className="text-carnation">{subtitleOne}</h2>
-        <p style={{fontWeight: '400'}}>{subtitleTwo}</p>
+        <div className={styles['project-header-grid']}>
+          <div>
+            <div>
+              <h1>{name || "Our Work"}</h1>
+              <h2 className="text-carnation">{subtitleOne}</h2>
+              <p style={{ fontWeight: "400" }}>{subtitleTwo}</p>
+            </div>
+          </div>
+          <header className="ml-auto w-full flex start-col-mobile">
+            <ul className="flex flex-row justify-end items-center flex-col-mobile">
+              {filters &&
+                filters.map((filter) => {
+                  return (
+                    <li
+                      key={filter.slug}
+                      className={`mx-3 ${styles.filter} ${
+                        activeFilter.toUpperCase() ===
+                          filter.name.toUpperCase() && styles["active-filter"]
+                      }`}
+                      onClick={() => handleFilter(filter.slug)}
+                      style={{ cursor: "pointer", letterSpacing: ".045rem" }}
+                    >
+                      {filter.name}
+                    </li>
+                  );
+                })}
+            </ul>
+          </header>
+        </div>
       </div>
 
       <div></div>
