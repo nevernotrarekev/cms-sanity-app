@@ -6,7 +6,6 @@ import { CMS_NAME } from "../../lib/constants";
 import ProjectsGrid from "../../components/projects-grid";
 
 export default function Index({ data }) {
-  console.log("data", data);
   return (
     <div className="work-page">
       <Layout>

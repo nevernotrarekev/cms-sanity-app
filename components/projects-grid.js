@@ -27,8 +27,6 @@ export default function ProjectsGrid({
     }
   };
 
-  console.log("POSTS", posts);
-
   return (
     <section>
       <div className="flex flex-col md:flex-row w-full">
