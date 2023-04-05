@@ -27,12 +27,12 @@ export default function ProjectsGrid({
     }
   };
 
-  console.log(subtitleOne, subtitleTwo);
+  console.log("POSTS", posts);
 
   return (
     <section>
       <div className="flex flex-col md:flex-row w-full">
-        <div className={styles['project-header-grid']}>
+        <div className={styles["project-header-grid"]}>
           <div>
             <div>
               <h1>{name || "Our Work"}</h1>
@@ -70,7 +70,11 @@ export default function ProjectsGrid({
             <div key={post.title} className={styles.columns}>
               <Link
                 legacyBehavior
-                as={`/posts/${post.slug?.current}`}
+                as={
+                  post.slug?.current
+                    ? `/posts/${post.slug?.current}`
+                    : `/posts/${post.slug}`
+                }
                 href="/posts/[slug]"
               >
                 <a className={styles.link}>
