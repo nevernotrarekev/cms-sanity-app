@@ -6,7 +6,6 @@ import { CMS_NAME } from "../../lib/constants";
 import ProjectsGrid from "../../components/projects-grid";
 
 export default function Index({ data }) {
-  console.log("data", data);
   return (
     <div className="work-page">
       <Layout>
@@ -32,7 +31,6 @@ export default function Index({ data }) {
                 posts={data[0].projects}
                 subtitleOne={data[0].talentTitle}
                 subtitleTwo={data[0].talentDescription}
-
               />{" "}
             </div>
           ) : (

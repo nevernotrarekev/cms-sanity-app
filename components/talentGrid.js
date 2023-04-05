@@ -3,8 +3,6 @@ import Link from "next/link";
 import { imageBuilder } from "../lib/sanity";
 
 export default function TalentGrid({ talent, settings }) {
-  console.log({ settings });
-
   const pageTitle =
     (Array.isArray(settings) &&
       settings?.length > 0 &&

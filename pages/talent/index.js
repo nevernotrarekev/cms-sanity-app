@@ -8,10 +8,9 @@ import { CMS_NAME } from "../../lib/constants";
 export default function Index({ allTalent, settings, preview }) {
   return (
     <div className="work-page">
-      <Layout preview={preview} >
+      <Layout preview={preview}>
         <Head>
           <title>{CMS_NAME} | Creative Collective | Talent</title>
-
           <meta
             name="description"
             content="A Creative Collective Focused on Production, Post-Production, and Design"
@@ -24,7 +23,6 @@ export default function Index({ allTalent, settings, preview }) {
           />
         </Head>
         <Container>
-
           <TalentGrid talent={allTalent} settings={settings} />
         </Container>
       </Layout>
