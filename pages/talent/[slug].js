@@ -6,6 +6,11 @@ import { CMS_NAME } from "../../lib/constants";
 import ProjectsGrid from "../../components/projects-grid";
 
 export default function Index({ data }) {
+
+  // migrating over to new project tagging structure for talent pages.
+  let hasFeaturedWork = data && data.length > 0 && data[0]?.featuredWork;
+  let hasProjects = data && data.length > 0 && data[0]?.projects;
+
   return (
     <div className="work-page">
       <Layout>
@@ -24,7 +29,20 @@ export default function Index({ data }) {
           />
         </Head>
         <Container>
-          {data && data.length > 0 ? (
+          {!hasFeaturedWork && !hasProjects && <div>No projects found</div>}
+
+          {hasFeaturedWork && (
+            <div className="mb-100">
+              <ProjectsGrid
+                name={data[0].talentName}
+                posts={data[0].featuredWork}
+                subtitleOne={data[0].talentTitle}
+                subtitleTwo={data[0].talentDescription}
+              />{" "}
+            </div>
+          )}
+
+          {!hasFeaturedWork && hasProjects && (
             <div className="mb-100">
               <ProjectsGrid
                 name={data[0].talentName}
@@ -33,8 +51,6 @@ export default function Index({ data }) {
                 subtitleTwo={data[0].talentDescription}
               />{" "}
             </div>
-          ) : (
-            <div>No projects found</div>
           )}
         </Container>
       </Layout>
