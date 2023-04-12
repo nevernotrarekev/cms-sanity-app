@@ -9,7 +9,7 @@ export default function Index({ data }) {
 
   // migrating over to new project tagging structure for talent pages.
   let hasFeaturedWork = data && data.length > 0 && data[0]?.featuredWork;
-  let hasProjects = data && data.length > 0 && data[0].projects;
+  let hasProjects = data && data.length > 0 && data[0]?.projects;
 
   return (
     <div className="work-page">
