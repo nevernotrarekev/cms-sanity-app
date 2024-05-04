@@ -20,6 +20,11 @@ export default function TalentGrid({ talent, settings }) {
       settings[0].talentSettingsImage) ||
     null;
 
+  /* Omit Josh Rathmell 
+      3/18/2024: Sean H - Projects refer to Josh Rathmell in Sanity's content, so he can't be deleted. Omitting from the Talent Grid for now.
+  */
+  const talentGrid = talent.filter((t) => t.talentName !== "Josh Rathmell" && t.slug.current !== "JoshRathmell");
+
   return (
     <div>
       <h1>{pageTitle}</h1>
@@ -28,7 +33,7 @@ export default function TalentGrid({ talent, settings }) {
       </h2>
       <div className={styles["container"]}>
         <div className={styles["talent-grid"]}>
-          {talent.map((t) => (
+          {talentGrid.map((t) => (
             <div className={styles["talent-card"]}>
               <Link href={`/talent/${t?.slug?.current}`}>
                 <h2>{t?.talentName}</h2>

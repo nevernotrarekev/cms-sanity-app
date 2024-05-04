@@ -34,9 +34,8 @@ export default function Header() {
     return (
       <div>
         <nav
-          className={` ${asFixed && styles["fixed-nav"]}  ${
-            asFixed && showFixedNav && styles["show"]
-          } container max-w-wide mx-auto px-5 flex lg:flex-row justify-between items-center lg:mb-12 md:mb-6 mb-20 mt-8 navbar-main `}
+          className={` ${asFixed && styles["fixed-nav"]}  ${asFixed && showFixedNav && styles["show"]
+            } container max-w-wide mx-auto px-5 flex lg:flex-row justify-between items-center lg:mb-12 md:mb-6 mb-20 mt-8 navbar-main `}
         >
           <div className="w-168px">
             <Link legacyBehavior href="/">
@@ -64,6 +63,18 @@ export default function Header() {
             <div></div>
           </div>
           <div className={cn(styles.links, burgerOpen ? styles.open : null)}>
+
+            <Link legacyBehavior href={"/play"}>
+              <a
+                className={cn(
+                  classes.link,
+                  router.pathname === "/play" ? styles.active : null,
+                  burgerOpen ? styles.menuLink : null
+                )}
+              >
+                Production
+              </a>
+            </Link>
             <Link legacyBehavior href={"/work"}>
               <a
                 className={cn(
@@ -72,7 +83,7 @@ export default function Header() {
                   burgerOpen ? styles.menuLink : null
                 )}
               >
-                Work
+                Post
               </a>
             </Link>
             <Link legacyBehavior href={"/talent"}>
@@ -84,17 +95,6 @@ export default function Header() {
                 )}
               >
                 Talent
-              </a>
-            </Link>
-            <Link legacyBehavior href={"/play"}>
-              <a
-                className={cn(
-                  classes.link,
-                  router.pathname === "/play" ? styles.active : null,
-                  burgerOpen ? styles.menuLink : null
-                )}
-              >
-                Play
               </a>
             </Link>
             <Link legacyBehavior href={"/about"}>

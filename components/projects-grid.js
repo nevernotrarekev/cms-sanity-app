@@ -6,15 +6,15 @@ import styles from "./projects-grid.module.scss";
 export default function ProjectsGrid({
   name,
   posts,
-  subtitleOne = "",
-  subtitleTwo = "",
+  subtitleOne,
+  subtitleTwo,
 }) {
   const [projects, setProjects] = useState(posts);
   const [activeFilter, setActiveFilter] = useState("all");
   const filters = [
     { name: "All", slug: "all" },
     { name: "Editorial", slug: "editorial" },
-    { name: "Animation/VFX", slug: "animation-vfx" },
+    { name: "VFX/Animation", slug: "animation-vfx" },
     { name: "Color", slug: "color" },
   ];
   const handleFilter = (filter) => {
@@ -33,9 +33,9 @@ export default function ProjectsGrid({
         <div className={styles["project-header-grid"]}>
           <div>
             <div>
-              <h1>{name || "Our Work"}</h1>
-              <h2 className="text-carnation">{subtitleOne}</h2>
-              <p style={{ fontWeight: "400" }}>{subtitleTwo}</p>
+              {name && <h1>{name}</h1>}
+              {subtitleOne && <h2 className="text-carnation">{subtitleOne}</h2>}
+              {subtitleTwo && <p style={{ fontWeight: "400" }}>{subtitleTwo}</p>}
             </div>
           </div>
           <header className="ml-auto w-full flex start-col-mobile">
@@ -45,10 +45,9 @@ export default function ProjectsGrid({
                   return (
                     <li
                       key={filter.slug}
-                      className={`mx-3 ${styles.filter} ${
-                        activeFilter.toUpperCase() ===
-                          filter.name.toUpperCase() && styles["active-filter"]
-                      }`}
+                      className={`mx-3 ${styles.filter} ${activeFilter.toUpperCase() ===
+                        filter.name.toUpperCase() && styles["active-filter"]
+                        }`}
                       onClick={() => handleFilter(filter.slug)}
                       style={{ cursor: "pointer", letterSpacing: ".045rem" }}
                     >

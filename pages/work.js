@@ -6,6 +6,8 @@ import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 
 export default function Index({ allPosts, preview }) {
+  const pageName = "Post Production"
+  const pageSubhead = "Editorial, VFX and Finishing forms the MONDIAL studio foundation . Our dynamic in-house and remote team encompasses lead artists in Editorial, 2D, 3D, Design, Color and Finishing."
   return (
     <div className="work-page">
       <Layout preview={preview}>
@@ -25,11 +27,15 @@ export default function Index({ allPosts, preview }) {
           />
         </Head>
         <Container>
-          {allPosts.allWork.length > 0 && (
-            <div className="mb-100">
-              <ProjectsGrid posts={allPosts.allWork} />
+          <div className="mb-100">
+            <h1>{pageName}</h1>
+            <h2 className="text-carnation text-xl" style={{ fontWeight: "400" }}>{pageSubhead}</h2>
+            <div className="mt-8">
+              {allPosts.allWork.length > 0 && (
+                <ProjectsGrid posts={allPosts.allWork} />
+              )}
             </div>
-          )}
+          </div>
         </Container>
       </Layout>
     </div>
