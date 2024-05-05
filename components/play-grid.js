@@ -5,7 +5,7 @@ import { imageBuilder } from "../lib/sanity";
 import styles from "./play-grid.module.scss";
 import cn from "classnames";
 import Masonry from "react-masonry-css";
-import Modal from "@material-ui/core/Modal";
+import Modal from '@mui/material/Modal';
 
 const PlayGrid = ({ items }) => {
   const [openUser, setOpenUser] = useState(false);
@@ -27,7 +27,7 @@ const PlayGrid = ({ items }) => {
   };
   return (
     <>
-      <Modal
+      <Modal 
         open={openUser}
         onClose={handleCloseUser}
         aria-labelledby="simple-modal-title"

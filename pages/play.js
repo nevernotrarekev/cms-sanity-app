@@ -6,7 +6,7 @@ import { CMS_NAME } from "../lib/constants";
 import PlayGrid from "../components/play-grid";
 
 export default function Index({ playData, preview }) {
-  const pageName = playData.pageTitle | "Production";
+  const pageName = playData.pageTitle ?? "Production";
   const pageSubhead = "We offer full live action production services based on the individual needs of each production brief, in isolation or as part of a complete soup to nuts MONDIAL production solution.";
   return (
     <>

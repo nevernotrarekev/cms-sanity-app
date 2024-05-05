@@ -33,8 +33,8 @@ const SingleVideoItem = ({ item, index }) => {
             stroke="#f3ede0"
           />
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M34.9 52.4L52.1 40.6L34.9 29V52.4Z"
             fill="#f3ede0"
           />
