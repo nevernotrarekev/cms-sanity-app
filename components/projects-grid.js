@@ -80,6 +80,7 @@ export default function ProjectsGrid({
                       index={index}
                       slug={post.slug}
                       image={post.coverImageWork}
+                      title={post.title}
                     />
 
                     <div
