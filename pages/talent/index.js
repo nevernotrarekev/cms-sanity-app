@@ -48,15 +48,15 @@ export default function Index({ allTalent, settings, preview }) {
           <div className="grid grid-cols-10 mb-10">
             <div className="flex flex-col col-span-10 md:col-span-5">
               <h1>{pageTitle}</h1>
-              <p className="mb-8">
+              <p className="mb-8 text-balance">
                 {pageSubtitle}
               </p>
               {
                 talentGrid.map((t) => (
-                  <Link className="flex ga-4 mb-8 hover:text-carnation" href={`/talent/${t?.slug?.current}`}>
+                  <Link className="flex gap-1 mb-8 hover:text-carnation" href={`/talent/${t?.slug?.current}`}>
                     <span className="font-bold">{t?.talentName}</span>
-                    <span className="mx-4">|</span>
-                    <span>{t?.talentTitle}</span>
+                    <span>|</span>
+                    <span>{t?.talentTitle.replaceAll('|', '/')}</span>
                   </Link>
                 ))
               }

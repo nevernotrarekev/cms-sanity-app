@@ -31,15 +31,15 @@ export default function Index({ data }) {
         <Container>
           <div className="mb-100">
             <h1>{talentName}</h1>
-            <h2 className="text-carnation" style={{ fontWeight: "400" }}>{talentTitle}</h2>
-            <p style={{ fontWeight: "400" }}>{talentDescription}</p>
+            <h2 className="text-carnation font-[400]">{talentTitle}</h2>
+            <p className="font-[400] text-balance">{talentDescription}</p>
 
             <div className="mt-8">
               {!hasFeaturedWork && !hasProjects && <div>No projects found</div>}
 
               {hasFeaturedWork && (
                 <div className="mb-100">
-                  <ProjectsGrid posts={data[0].featuredWork} />
+                  <ProjectsGrid posts={data[0].featuredWork} showFilters={false} />
                 </div>
               )}
 

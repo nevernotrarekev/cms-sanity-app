@@ -29,7 +29,7 @@ export default function Index({ allPosts, preview }) {
         <Container>
           <div className="mb-100">
             <h1>{pageName}</h1>
-            <h2 className="text-carnation text-xl" style={{ fontWeight: "400" }}>{pageSubhead}</h2>
+            <h2 className="text-carnation text-xl font-[400]">{pageSubhead}</h2>
             <div className="mt-8">
               {allPosts.allWork.length > 0 && (
                 <ProjectsGrid posts={allPosts.allWork} />
