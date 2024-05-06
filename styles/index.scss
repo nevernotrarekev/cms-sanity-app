@@ -1,11 +1,7 @@
-@import "slick";
-@import "slick-theme";
-
-/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
-/* purgecss end ignore */
 @tailwind utilities;
+
 @layer base {
   body {
     background: #f3ede0;
@@ -58,16 +54,14 @@
 }
 
 .slick-slide,
-.slick-slide[aria-hidden="true"]:not(.slick-cloned)
-  ~ .slick-cloned[aria-hidden="true"] {
+.slick-slide[aria-hidden="true"]:not(.slick-cloned) ~ .slick-cloned[aria-hidden="true"] {
   div {
     opacity: 1;
   }
 }
 /* slide when active/center */
 .slick-center,
-.slick-slide[aria-hidden="true"]:not([tabindex="-1"])
-  + .slick-cloned[aria-hidden="true"] {
+.slick-slide[aria-hidden="true"]:not([tabindex="-1"]) + .slick-cloned[aria-hidden="true"] {
   div {
     opacity: 1;
   }
@@ -193,6 +187,7 @@
 }
 
 .navbar-main {
+  background: #f3ede0;
   padding-left: 65px !important;
   padding-right: 65px !important;
 
@@ -200,4 +195,8 @@
     padding-left: 24px !important;
     padding-right: 24px !important;
   }
+}
+
+a:hover {
+  @apply text-carnation;
 }

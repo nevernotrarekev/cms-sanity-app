@@ -1,25 +1,10 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: {
-    enabled: true,
-    layers: ["components", "utilities"],
-    content: ["./components/*.js", "./pages/*.js"],
-  },
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
-    maxWidth: {
-      mid: "1680px",
-      wide: "1400px",
-    },
-    width: {
-      "168px": "168px",
-    },
-    aspectRatio: {
-      none: 0,
-      square: [1, 1],
-      "16/9": [16, 9],
-      "4/3": [4, 3],
-      "21/9": [21, 9],
-    },
-
     extend: {
       backgroundColor: {
         navy: "#141928",
@@ -57,13 +42,16 @@ module.exports = {
       opacity: {
         40: 0.4,
       },
+      maxWidth: {
+        mid: "1680px",
+        wide: "1400px",
+      },
     },
   },
-  variants: {
-    aspectRatio: ["responsive"],
+  corePlugins: {
+    aspectRatio: false,
   },
   plugins: [
-    require("tailwindcss-responsive-embed"),
-    require("tailwindcss-aspect-ratio"),
+    require('@tailwindcss/aspect-ratio'),
   ],
 };

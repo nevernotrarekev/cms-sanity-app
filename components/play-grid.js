@@ -61,12 +61,12 @@ const PlayGrid = ({ items }) => {
               <div>
                 {items[overlayItem].vimeoid.includes("vimeo") ? (
                   <Vimeo
-                    className="embed-responsive aspect-ratio-16/9"
+                    className="embed-responsive aspect-w-16 aspect-h-9"
                     video={items[overlayItem].vimeoid}
                     autoplay
                   />
                 ) : (
-                  <div className="embed-responsive aspect-ratio-16/9">
+                  <div className="embed-responsive aspect-w-16 aspect-h-9">
                     <YouTube video={items[overlayItem].vimeoid} autoplay />
                   </div>
                 )}
@@ -129,7 +129,7 @@ const PlayGrid = ({ items }) => {
                 {/* {item.vimeoid && (
                   <div>
                     <Vimeo
-                      className="embed-responsive aspect-ratio-16/9"
+                      className="embed-responsive aspect-w-16 aspect-h-9"
                       video={item.vimeoid}
                     />
                   </div>

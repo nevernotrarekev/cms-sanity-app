@@ -34,7 +34,7 @@ export default function PostHeader({
           />
         ) : (
           <Vimeo
-            className="embed-responsive aspect-ratio-16/9"
+            className="embed-responsive aspect-w-16 aspect-h-9"
             video={vimeoid}
           />
         )}

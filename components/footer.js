@@ -7,7 +7,7 @@ import { SiGooglemaps, SiInstagram, SiLinkedin } from "react-icons/si";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy">
+    <footer className="bg-navy relative">
       <Container>
         <div className={styles.footer}>
           <div className={styles.details}>

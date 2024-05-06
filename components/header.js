@@ -37,12 +37,10 @@ export default function Header() {
           className={` ${asFixed && styles["fixed-nav"]}  ${asFixed && showFixedNav && styles["show"]
             } container max-w-wide mx-auto px-5 flex lg:flex-row justify-between items-center lg:mb-12 md:mb-6 mb-20 mt-8 navbar-main `}
         >
-          <div className="w-168px">
+          <div className="w-[168px]">
             <Link legacyBehavior href="/">
               <a
                 className="hover:underline"
-                data-aos={!asFixed && "fade-down"}
-                data-aos-duration="600"
               >
                 {asFixed ? (
                   <img

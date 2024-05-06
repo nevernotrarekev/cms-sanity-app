@@ -45,7 +45,7 @@ const SingleVideoItem = ({ item, index }) => {
         {play ? (
           <div style={{ cursor: "pointer" }}>
             <Vimeo
-              className={cn("embed-responsive aspect-ratio-16/9", styles.vimeo)}
+              className={cn("embed-responsive aspect-w-16 aspect-h-9", styles.vimeo)}
               video={item.vimeoid}
               autoplay
               controls
@@ -53,16 +53,15 @@ const SingleVideoItem = ({ item, index }) => {
           </div>
         ) : (
           <Vimeo
-            className={cn("embed-responsive aspect-ratio-16/9", styles.vimeo)}
+            className={cn("embed-responsive aspect-w-16 aspect-h-9", styles.vimeo)}
             video={item.vimeoid}
             controls={false}
           />
         )}
 
         <div
-          className={`${styles.overlay} ${
-            play && styles["is-play"]
-          } transition ease-in-out duration-500`}
+          className={`${styles.overlay} ${play && styles["is-play"]
+            } transition ease-in-out duration-500`}
         ></div>
       </div>
     </div>

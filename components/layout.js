@@ -7,7 +7,7 @@ export default function Layout({ preview, children, fullHeight = true }) {
     <>
       <Meta />
       <Header />
-      <div className={fullHeight && "min-h-screen"} style={{paddingBottom: fullHeight ? 0 : 64}} data-aos="fade-in" data-aos-duration="600" >
+      <div className={fullHeight && "min-h-screen"}>
         <main>{children}</main>
       </div>
       <Footer />
