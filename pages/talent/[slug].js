@@ -31,10 +31,10 @@ export default function Index({ data }) {
         <Container>
           <div className="mb-100">
             <h1 className="page-title">{talentName}</h1>
-            <h2 className="text-carnation font-[400]">{talentTitle}</h2>
-            <p className="font-[400] text-balance">{talentDescription}</p>
+            <h2 className="font-[400] mb-8">{talentTitle}</h2>
+            <p className="font-[400]">{talentDescription}</p>
 
-            <div className="mt-8">
+            <div className="mt-10">
               {!hasFeaturedWork && !hasProjects && <div>No projects found</div>}
 
               {hasFeaturedWork && (
