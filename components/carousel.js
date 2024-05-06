@@ -1,25 +1,30 @@
 import Slider from "react-slick";
 import Vimeo from "@u-wave/react-vimeo";
 import styles from "./carousel.module.scss";
-import react, { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import cn from "classnames";
 
-const SingleVideoItem = ({ item, index }) => {
-  const [play, setPlay] = useState(false);
+const SingleVideoItem = ({ item, index, active }) => {
+  const vimeoRef = useRef();
 
-  const [showPoster, setShowPoster] = useState();
+  const [paused, setPaused] = useState(true);
   const videoClick = () => {
-    setShowPoster((showPoster) => !showPoster);
-    setPlay(!play);
-  };
+    if (active) setPaused(!paused);
+  }
 
-  const renderVideo = () => (
+  useEffect(() => {
+    if (!active) {
+      setPaused(true);
+    }
+  }, [active])
+
+  return (
     <div
-      onClick={() => videoClick()}
-      className={cn("bg-navy", styles.container)}
+      onClick={videoClick}
+      className={cn("bg-navy", styles.container, !active ? 'pointer-events-none' : '')}
       key={index}
     >
-      <div className={cn(styles.videoOverlay, showPoster && styles.showPoster)}>
+      <div className={cn(styles.videoOverlay, !paused && '!opacity-0')}>
         <svg
           width="77"
           height="77"
@@ -41,36 +46,25 @@ const SingleVideoItem = ({ item, index }) => {
         </svg>
         Watch Reel
       </div>
-      <div className={`${styles["single-item-container"]}`}>
-        {play ? (
-          <div style={{ cursor: "pointer" }}>
-            <Vimeo
-              className={cn("embed-responsive aspect-w-16 aspect-h-9", styles.vimeo)}
-              video={item.vimeoid}
-              autoplay
-              controls
-            />
-          </div>
-        ) : (
-          <Vimeo
-            className={cn("embed-responsive aspect-w-16 aspect-h-9", styles.vimeo)}
-            video={item.vimeoid}
-            controls={false}
-          />
-        )}
+      <div className={styles["single-item-container"]}>
+        <Vimeo
+          className={cn("embed-responsive aspect-w-16 aspect-h-9", styles.vimeo)}
+          video={item.vimeoid}
+          controls={false}
+          ref={vimeoRef}
+          paused={paused}
+        />
 
         <div
-          className={`${styles.overlay} ${play && styles["is-play"]
-            } transition ease-in-out duration-500`}
+          className={cn(styles.overlay, `transition ease-in-out duration-500`, !paused && styles["is-play"])}
         ></div>
       </div>
     </div>
-  );
-
-  return renderVideo();
+  )
 };
 
 const Carousel = ({ items }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -83,6 +77,10 @@ const Carousel = ({ items }) => {
     arrows: false,
     drag: true,
     variableWidth: true,
+    afterChange: function (index) {
+      console.log(`Slider Changed to: ${index + 1}`);
+      setCurrentSlide(index);
+    },
     customPaging: function (i) {
       return (
         <a className={`${styles.paginate} carousel-link`}>{items[i].title}</a>
@@ -90,15 +88,13 @@ const Carousel = ({ items }) => {
     },
   };
   return (
-    <>
-      <div className={styles.carousel}>
-        <Slider {...settings}>
-          {items.map((item, i) => {
-            return <SingleVideoItem key={i} item={item} index={i} />;
-          })}
-        </Slider>
-      </div>
-    </>
+    <div className={styles.carousel}>
+      <Slider {...settings}>
+        {items.map((item, i) => {
+          return <SingleVideoItem key={i} item={item} index={i} active={currentSlide == i} />;
+        })}
+      </Slider>
+    </div>
   );
 };
 
