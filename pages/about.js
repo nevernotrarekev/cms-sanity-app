@@ -30,21 +30,21 @@ export default function Index({ aboutData, homeData }) {
         <Container>
           <div className="grid grid-cols-10 about-page">
             <div className="col-span-10 md:col-span-5">
-              <h1 className="mb-4">{aboutData.aboutSectionTitle}</h1>
+              <h1 className="page-title mb-4">{aboutData.aboutSectionTitle}</h1>
               <div className="mb-10">
                 <BlockContent
                   blocks={aboutData.aboutContent}
                   className={markdownStyles.markdown}
                 />
               </div>
-              {<h2 className="text-6xl mb-4">{aboutData.subsection1Title}</h2>}
+              {<h2 className="font-[600] text-6xl mb-4">{aboutData.subsection1Title}</h2>}
               <div className="mb-10">
                 <BlockContent
                   blocks={aboutData.subsection1Content}
                   className={markdownStyles.markdown}
                 />
               </div>
-              {<h2 className="text-6xl mb-4">{aboutData.subsection2Title}</h2>}
+              {<h2 className="font-[600] text-6xl mb-4">{aboutData.subsection2Title}</h2>}
               <div className="mb-10">
                 <BlockContent
                   blocks={aboutData.subsection2Content}

@@ -47,7 +47,7 @@ export default function Index({ allTalent, settings, preview }) {
         <Container>
           <div className="grid grid-cols-10 mb-10">
             <div className="flex flex-col col-span-10 md:col-span-5">
-              <h1>{pageTitle}</h1>
+              <h1 className="page-title">{pageTitle}</h1>
               <p className="mb-8 text-balance">
                 {pageSubtitle}
               </p>

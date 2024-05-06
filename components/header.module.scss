@@ -69,20 +69,12 @@
 }
 
 .link {
-  font-size: 1.625rem;
-  line-height: 1.08;
-  font-weight: bold;
-  letter-spacing: 0.065rem;
+  font-size: 24px;
+  font-weight: 500;
   display: inline;
   transition: 0.2s ease;
 
   border-bottom: 2px solid transparent;
-
-  &:hover,
-  &:active {
-    border-bottom: 2px solid !important;
-    color: #f25b5d;
-  }
 
   @media screen and (max-width: 768px) {
     & + & {
@@ -90,8 +82,11 @@
     }
   }
 
+  &:hover,
+  &:active,
   &.active {
     border-bottom: 2px solid;
+    @apply text-carnation;
 
     @media (max-width: 768px) {
       border-bottom: none;

@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor: {
+        mndlBlue: "#12416C",
         navy: "#141928",
         navyAlt: "#1b2e5a",
       },

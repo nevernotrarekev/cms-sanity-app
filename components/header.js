@@ -1,4 +1,4 @@
-import react, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import LogoSvg from "./logo-svg";
 import styles from "./header.module.scss";

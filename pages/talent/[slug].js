@@ -30,7 +30,7 @@ export default function Index({ data }) {
         </Head>
         <Container>
           <div className="mb-100">
-            <h1>{talentName}</h1>
+            <h1 className="page-title">{talentName}</h1>
             <h2 className="text-carnation font-[400]">{talentTitle}</h2>
             <p className="font-[400] text-balance">{talentDescription}</p>
 

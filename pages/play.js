@@ -26,7 +26,7 @@ export default function Index({ playData, preview }) {
         </Head>
         <Container>
           <div className="mb-100">
-            <h1>{pageName}</h1>
+            <h1 className="page-title">{pageName}</h1>
             <h2
               className="text-carnation text-xl font-[400]">{pageSubhead}</h2>
             <div className="mt-8">
