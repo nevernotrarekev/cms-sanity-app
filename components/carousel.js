@@ -53,6 +53,8 @@ const SingleVideoItem = ({ item, index, active }) => {
           controls={false}
           ref={vimeoRef}
           paused={paused}
+          onPlay={() => setPaused(false)}
+          onPause={() => setPaused(true)}
         />
 
         <div
@@ -77,8 +79,10 @@ const Carousel = ({ items }) => {
     arrows: false,
     drag: true,
     variableWidth: true,
+    beforeChange: function () {
+      setCurrentSlide(-1);
+    },
     afterChange: function (index) {
-      console.log(`Slider Changed to: ${index + 1}`);
       setCurrentSlide(index);
     },
     customPaging: function (i) {
