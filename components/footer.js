@@ -31,7 +31,7 @@ export default function Footer() {
                 </div>
                 <div className={classNames(styles.secondary, 'flex flex-col justify-between')}>
                   <div className={'flex flex-col'}>
-                    <div className="">nicola@mondialcreative.com</div>
+                    <div className="">patrick@mondialcreative.com</div>
                     <div className="">804-303-4528</div>
                   </div>
                   <div className={'flex'}>
