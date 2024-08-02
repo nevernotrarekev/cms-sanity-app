@@ -20,7 +20,7 @@ const PostPreviewItem = ({ video, slug, coverImage, title, brand }) => {
       className={`relative h-full ${styles["video-container"]}`}
     >
       {!video ? (
-        <CoverImage isLink index={index} slug={slug} image={coverImage} />
+        <CoverImage isLink index={index} slug={slug} image={coverImage} title={title} />
       ) : (
         <>
           <Vimeo video={video} background autoplay loop />
@@ -53,9 +53,8 @@ export default function PostPreview({
   vimeo,
 }) {
   const classes = {
-    link: `block h-full ${styles["post-preview"]} ${
-      featured && styles.featured
-    }`,
+    link: `block h-full ${styles["post-preview"]} ${featured && styles.featured
+      }`,
   };
 
   return (

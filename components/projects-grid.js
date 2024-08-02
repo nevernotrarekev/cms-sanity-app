@@ -2,19 +2,21 @@ import react, { useState } from "react";
 import CoverImage from "./cover-image";
 import Link from "next/link";
 import styles from "./projects-grid.module.scss";
+import classNames from "classnames";
 
 export default function ProjectsGrid({
   name,
   posts,
-  subtitleOne = "",
-  subtitleTwo = "",
+  subtitleOne,
+  subtitleTwo,
+  showFilters = true,
 }) {
   const [projects, setProjects] = useState(posts);
   const [activeFilter, setActiveFilter] = useState("all");
   const filters = [
     { name: "All", slug: "all" },
     { name: "Editorial", slug: "editorial" },
-    { name: "Animation/VFX", slug: "animation-vfx" },
+    { name: "VFX/Animation", slug: "animation-vfx" },
     { name: "Color", slug: "color" },
   ];
   const handleFilter = (filter) => {
@@ -29,26 +31,23 @@ export default function ProjectsGrid({
 
   return (
     <section>
-      <div className="flex flex-col md:flex-row w-full">
-        <div className={styles["project-header-grid"]}>
+      <div className={classNames("flex-col md:flex-row w-full", showFilters ? 'flex' : 'hidden')}>
+        <div className={classNames(styles["project-header-grid"])}>
           <div>
-            <div>
-              <h1>{name || "Our Work"}</h1>
-              <h2 className="text-carnation">{subtitleOne}</h2>
-              <p style={{ fontWeight: "400" }}>{subtitleTwo}</p>
-            </div>
+            {name && <h1>{name}</h1>}
+            {subtitleOne && <h2 className="text-carnation">{subtitleOne}</h2>}
+            {subtitleTwo && <p className="font-[400] text-balance">{subtitleTwo}</p>}
           </div>
-          <header className="ml-auto w-full flex start-col-mobile">
-            <ul className="flex flex-row justify-end items-center flex-col-mobile">
+          <header>
+            <ul className="flex flex-row justify-end items-center flex-col-mobile gap-0 md:gap-3">
               {filters &&
                 filters.map((filter) => {
                   return (
                     <li
                       key={filter.slug}
-                      className={`mx-3 ${styles.filter} ${
-                        activeFilter.toUpperCase() ===
-                          filter.name.toUpperCase() && styles["active-filter"]
-                      }`}
+                      className={`${styles.filter} ${activeFilter.toUpperCase() ===
+                        filter.name.toUpperCase() && styles["active-filter"]
+                        }`}
                       onClick={() => handleFilter(filter.slug)}
                       style={{ cursor: "pointer", letterSpacing: ".045rem" }}
                     >
@@ -61,7 +60,6 @@ export default function ProjectsGrid({
         </div>
       </div>
 
-      <div></div>
       <div className="flex flex-wrap mt-8">
         {projects.map((post, index) => {
           return (
@@ -82,6 +80,7 @@ export default function ProjectsGrid({
                       index={index}
                       slug={post.slug}
                       image={post.coverImageWork}
+                      title={post.title}
                     />
 
                     <div

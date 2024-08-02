@@ -1,16 +1,18 @@
 import Container from "../components/container";
 import Layout from "../components/layout";
-import { getAllPostsForPlay, getPlayData } from "../lib/api";
+import { getPlayData } from "../lib/api";
 import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 import PlayGrid from "../components/play-grid";
 
 export default function Index({ playData, preview }) {
+  const pageName = playData.pageTitle ?? "Production";
+  const pageSubhead = "We offer full live action production services based on the individual needs of each production brief, in isolation or as part of a complete soup to nuts MONDIAL production solution.";
   return (
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Play page {CMS_NAME}</title>
+          <title>{pageName} page {CMS_NAME}</title>
           <meta
             name="description"
             content="A Creative Collective Focused on Production, Post-Production, and Design"
@@ -24,7 +26,9 @@ export default function Index({ playData, preview }) {
         </Head>
         <Container>
           <div className="mb-100">
-            <h1>{playData.pageTitle}</h1>
+            <h1 className="page-title">{pageName}</h1>
+            <h2
+              className="text-carnation text-xl font-[400]">{pageSubhead}</h2>
             <div className="mt-8">
               <PlayGrid items={playData.items} />
             </div>

@@ -6,22 +6,6 @@
     position: relative;
     cursor: pointer;
 
-    &.slick-slide,
-    &.slick-slide[aria-hidden="true"]:not(.slick-cloned)
-      ~ .slick-cloned[aria-hidden="true"] {
-      div {
-        opacity: 1;
-      }
-    }
-    /* slide when active/center */
-    &.slick-center,
-    &.slick-slide[aria-hidden="true"]:not([tabindex="-1"])
-      + .slick-cloned[aria-hidden="true"] {
-      div {
-        opacity: 0.1;
-      }
-    }
-
     @media (max-width: 720px) {
       width: 75vw !important;
     }
@@ -38,12 +22,7 @@
   flex-direction: column;
   z-index: 3;
   font-size: 24px;
-  pointer-events: none;
   color: #f3ede0;
-
-  &.showPoster {
-    opacity: 0;
-  }
 
   svg {
     margin-bottom: 18px;
@@ -67,7 +46,7 @@
     height: 100%;
     width: 100%;
     top: 0px;
-    background-color: rgba(20, 25, 40, 0.4);
+    background-color: rgba(20, 25, 40, 0.7);
 
     &:hover {
       background-color: rgba(20, 25, 40, 0.55);

@@ -1,17 +1,13 @@
-@import "slick";
-@import "slick-theme";
-
-/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
-/* purgecss end ignore */
 @tailwind utilities;
+
 @layer base {
   body {
+    font-size: 18px;
     background: #f3ede0;
     color: #12416c;
     font-family: "roc-grotesk";
-    font-weight: 500;
     -webkit-font-smoothing: antialiased;
   }
   svg {
@@ -20,24 +16,29 @@
   a {
     display: inline-block;
   }
-  h1 {
-    font-size: 3rem;
-  }
 
-  @media (max-width: 720px) {
-    h1 {
-      font-size: 2.5rem;
-    }
+  h1 {
+    font-size: 36px;
+    line-height: 40px;
   }
 
   h3 {
-    font-size: 38px;
+    font-size: 32px;
+    line-height: 36px;
   }
+
   h4 {
     font-size: 18px;
-    font-weight: bold;
+    line-height: 20px;
   }
 }
+
+.page-title {
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 36px;
+}
+
 .btn-blue {
   @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
 }
@@ -58,16 +59,14 @@
 }
 
 .slick-slide,
-.slick-slide[aria-hidden="true"]:not(.slick-cloned)
-  ~ .slick-cloned[aria-hidden="true"] {
+.slick-slide[aria-hidden="true"]:not(.slick-cloned) ~ .slick-cloned[aria-hidden="true"] {
   div {
     opacity: 1;
   }
 }
 /* slide when active/center */
 .slick-center,
-.slick-slide[aria-hidden="true"]:not([tabindex="-1"])
-  + .slick-cloned[aria-hidden="true"] {
+.slick-slide[aria-hidden="true"]:not([tabindex="-1"]) + .slick-cloned[aria-hidden="true"] {
   div {
     opacity: 1;
   }
@@ -167,14 +166,6 @@
     justify-content: flex-start;
   }
 
-  .start-col-mobile {
-    margin-left: inherit;
-
-    li {
-      margin-left: 0px;
-    }
-  }
-
   .post-title {
     font-size: 1.5rem !important;
     margin-right: 12px;
@@ -193,6 +184,7 @@
 }
 
 .navbar-main {
+  background: #f3ede0;
   padding-left: 65px !important;
   padding-right: 65px !important;
 
@@ -200,4 +192,8 @@
     padding-left: 24px !important;
     padding-right: 24px !important;
   }
+}
+
+a:hover {
+  @apply text-carnation;
 }

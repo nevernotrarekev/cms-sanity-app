@@ -6,7 +6,7 @@ import { CMS_NAME } from "../../lib/constants";
 import ProjectsGrid from "../../components/projects-grid";
 
 export default function Index({ data }) {
-
+  const { talentName, talentTitle, talentDescription } = data[0];
   // migrating over to new project tagging structure for talent pages.
   let hasFeaturedWork = data && data.length > 0 && data[0]?.featuredWork;
   let hasProjects = data && data.length > 0 && data[0]?.projects;
@@ -29,29 +29,27 @@ export default function Index({ data }) {
           />
         </Head>
         <Container>
-          {!hasFeaturedWork && !hasProjects && <div>No projects found</div>}
+          <div className="mb-100">
+            <h1 className="page-title">{talentName}</h1>
+            <h2 className="font-[400] mb-8">{talentTitle}</h2>
+            <p className="font-[400]">{talentDescription}</p>
 
-          {hasFeaturedWork && (
-            <div className="mb-100">
-              <ProjectsGrid
-                name={data[0].talentName}
-                posts={data[0].featuredWork}
-                subtitleOne={data[0].talentTitle}
-                subtitleTwo={data[0].talentDescription}
-              />{" "}
-            </div>
-          )}
+            <div className="mt-10">
+              {!hasFeaturedWork && !hasProjects && <div>No projects found</div>}
 
-          {!hasFeaturedWork && hasProjects && (
-            <div className="mb-100">
-              <ProjectsGrid
-                name={data[0].talentName}
-                posts={data[0].projects}
-                subtitleOne={data[0].talentTitle}
-                subtitleTwo={data[0].talentDescription}
-              />{" "}
+              {hasFeaturedWork && (
+                <div className="mb-100">
+                  <ProjectsGrid posts={data[0].featuredWork} showFilters={false} />
+                </div>
+              )}
+
+              {!hasFeaturedWork && hasProjects && (
+                <div className="mb-100">
+                  <ProjectsGrid posts={data[0].projects} />
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </Container>
       </Layout>
     </div>
