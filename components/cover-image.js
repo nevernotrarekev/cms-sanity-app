@@ -10,7 +10,7 @@ export default function CoverImage({ index, title, image, isLink }) {
     <img
       alt={title ? `Cover Image for ${title}` : undefined}
       className={classes.image}
-      src={imageBuilder.image(image).url()}
+      src={imageBuilder.image(image).width(1280).url()}
     />
   );
 
