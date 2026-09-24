@@ -26,7 +26,7 @@ export default function PostHeader({
         {!vimeoid ? (
           <img
             alt={title ? `Cover Image for ${title}` : undefined}
-            src={imageBuilder.image(coverImage).url()}
+            src={imageBuilder.image(coverImage).width(1920).url()}
             style={{ width: "100%" }}
           />
         ) : (

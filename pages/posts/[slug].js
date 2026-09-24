@@ -40,7 +40,7 @@ export default function Post({ post, morePosts, preview }) {
                 </title>
                 <meta
                   property="og:image"
-                  content={imageBuilder.image(post.coverImage).url()}
+                  content={imageBuilder.image(post.coverImage).width(1200).url()}
                 />
 
                 <meta

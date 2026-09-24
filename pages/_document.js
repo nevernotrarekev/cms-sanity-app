@@ -5,6 +5,8 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <link rel="preconnect" href="https://use.typekit.net" crossOrigin="anonymous" />
+          <link rel="preconnect" href="https://p.typekit.net" crossOrigin="anonymous" />
           <link rel="stylesheet" href="https://use.typekit.net/vsk5xim.css" />
           <meta
             property="og:image"

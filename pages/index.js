@@ -2,12 +2,12 @@ import Container from "../components/container";
 import Featured from "../components/featured";
 import Intro from "../components/intro";
 import Layout from "../components/layout";
-import { getAllPostsForHome, getTestData } from "../lib/api";
+import { getTestData } from "../lib/api";
 import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 import Carousel from "../components/carousel";
 
-export default function Index({ allPosts, homeData, preview }) {
+export default function Index({ homeData, preview }) {
   return (
     <>
       <Layout preview={preview}>
@@ -45,7 +45,6 @@ export default function Index({ allPosts, homeData, preview }) {
 export async function getServerSideProps({ preview = false }) {
   return {
     props: {
-      allPosts: await getAllPostsForHome(false),
       homeData: await getTestData()
     }
   };

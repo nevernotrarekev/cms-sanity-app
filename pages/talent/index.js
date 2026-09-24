@@ -78,8 +78,10 @@ export default function Index({ allTalent, settings, preview }) {
 }
 
 export async function getServerSideProps({ preview = false }) {
-  const allTalent = await getAllTalentData(preview);
-  const settings = await getAllTalentSettingsData(preview);
+  const [allTalent, settings] = await Promise.all([
+    getAllTalentData(preview),
+    getAllTalentSettingsData(preview),
+  ]);
   return {
     props: { allTalent, settings, preview },
   };

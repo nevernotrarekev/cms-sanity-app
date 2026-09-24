@@ -1,6 +1,6 @@
 import Container from "../components/container";
 import Layout from "../components/layout";
-import { getAboutData, getTestData } from "../lib/api";
+import { getAboutData } from "../lib/api";
 import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 import markdownStyles from "../components/markdown-styles.module.css";
@@ -10,7 +10,7 @@ import Sticky from 'react-sticky-el';
 
 import { imageBuilder } from "../lib/sanity"
 
-export default function Index({ aboutData, homeData }) {
+export default function Index({ aboutData }) {
   return (
     <>
       <Layout preview={false}>
@@ -83,8 +83,7 @@ export default function Index({ aboutData, homeData }) {
 
 export async function getServerSideProps({ preview = false }) {
   const aboutData = await getAboutData("/about");
-  const homeData = await getTestData();
   return {
-    props: { aboutData, preview, homeData }
+    props: { aboutData, preview }
   };
 }

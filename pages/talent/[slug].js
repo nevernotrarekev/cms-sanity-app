@@ -58,6 +58,9 @@ export default function Index({ data }) {
 
 export async function getServerSideProps({ params, preview = false }) {
   const data = await getSingleTalentData(params.slug);
+  if (!data || data.length === 0) {
+    return { notFound: true };
+  }
   return {
     props: { data },
   };

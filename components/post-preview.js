@@ -6,7 +6,7 @@ import react, { useState } from "react";
 
 import Vimeo from "@u-wave/react-vimeo";
 
-const PostPreviewItem = ({ video, slug, coverImage, title, brand }) => {
+const PostPreviewItem = ({ index, video, slug, coverImage, title, brand }) => {
   const [play, setPlay] = useState(false);
 
   const handleMouseOver = (shouldPlay) => {
@@ -61,6 +61,7 @@ export default function PostPreview({
     <Link legacyBehavior as={`/posts/${slug}`} href="/posts/[slug]">
       <a className={classes.link}>
         <PostPreviewItem
+          index={index}
           video={vimeo}
           slug={slug}
           coverImage={coverImage}
